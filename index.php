@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'config.php';
-include 'navs.html';
+include 'navs2.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,9 @@ include 'navs.html';
 <body>
     <style>
         .main{border: 0;}
-
+.carimg{
+    height: 400px;
+}
     </style>
 
 <div class="container-fluid pt-5 mt-5">

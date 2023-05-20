@@ -34,7 +34,9 @@ if (!isset($_SESSION['cart'][$product_id])) {
   $_SESSION['cart'][$product_id] = array(
     'name' => $p_name,
     'price' => $p_price,
-    'quantity' => 1
+    'quantity' => 1,
+    'image' => $img_upload
+
   );
 } else {
   $_SESSION['cart'][$product_id]['quantity']++;
