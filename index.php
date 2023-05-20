@@ -1,4 +1,8 @@
-<?php include 'config.php'; include 'navs.html';?>
+<?php
+session_start();
+include 'config.php';
+include 'navs.html';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,40 +19,40 @@
 <body>
     <style>
         .main{border: 0;}
+
     </style>
-<div class="container ">
-    <div class="row">
-<?php 
-$query = "SELECT * FROM products";
-$result = $conn->query($query);
-if($result->num_rows > 0){
-    foreach($result as $row){
-        $p_name = $row['p_name'];
-        $p_price = $row['p_price'];
-        $p_tax = $row['p_tax'];
-        $p_qty = $row['p_qty'];
-        $img_upload = $row['img_upload'];
 
-?>
+<div class="container-fluid pt-5 mt-5">
+    <div class="row px-xl-5 pb-3">
+        <?php 
+        $query = "SELECT * FROM products";
+        $result = $conn->query($query);
+        if($result->num_rows > 0){
+            foreach($result as $row){
+                $p_name = $row['p_name'];
+                $p_price = $row['p_price'];
+                $p_tax = $row['p_tax'];
+                $p_qty = $row['p_qty'];
+                $img_upload = $row['img_upload'];
+        ?>
 
-  
-<div class="col-md-6" >
-<div class="card main" style="width: 18rem;">
-  <img src="<?php echo $img_upload ?>" class="card-img-top" alt="...">
-  <div class="card-body">
-    
-    <p class="card-text"> name:   <?php echo $p_name ?></p>
-        <p class="card-text">price: <?php echo $p_price ?>  Rp</p>
-        <p class="card-text">qty: <?php echo $p_qty ?></p>
-  
-       
- 
-<?php 
-    }
-}
-?>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="card main" style="width: 18rem;">
+                <img src="<?php echo $img_upload ?>" class="card-img-top carimg" alt="...">
+                <div class="card-body">
+                    <p class="card-title">name: <?php echo $p_name ?></p>
+                    <p class="card-text">price: <?php echo $p_price ?>  Rp</p>
+                    <a href="add-to-cart.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        
+        <?php 
+            }
+        }
+        ?>
+    </div>
 </div>
-</div>
-</div>
-    </div></div></body></html>
 
+</body>
+</html>
