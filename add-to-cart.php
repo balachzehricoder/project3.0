@@ -24,6 +24,10 @@ if ($result->num_rows === 0) {
 $product = $result->fetch_assoc();
 $p_name = $product['p_name'];
 $p_price = $product['p_price'];
+$p_qty = $product['p_qty'];
+
+$img_upload = $product['img_upload'];
+
 
 // Add the product to the cart.
 if (!isset($_SESSION['cart'])) {

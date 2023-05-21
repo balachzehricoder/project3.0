@@ -58,3 +58,13 @@ include 'navs2.php';
 
 </body>
 </html>
+<!-- echo '<li>
+    <h3>' . $product['name'] . '</h3>
+    <p>' . $product['price'] . '</p>
+    <img src="' . $product['image'] . '">
+    <p><a href="remove.php?product_id=' . $product_id . '">Remove</a></p>
+  </li>'; -->
+
+
+
+
