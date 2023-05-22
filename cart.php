@@ -27,8 +27,8 @@ $cart = $_SESSION['cart'];
   <div class="col-12">
 <img class="img" src="<?php echo $product['image'] ?>" alt="">
     <input type="text" disabled value="<?php echo $product['name']  ?>">
-    <input type="text" disabled value="<?php echo $product['price']  ?>">
-    <!-- <input type="text"  value="<?php echo $product['qty']  ?>"> -->
+    <input type="text" disabled value="<?php echo $product['price_total']  ?>">
+    <input type="text" disabled value="<?php echo $product['quantity']  ?>">
     <!-- <input type="text" value="<?php echo $product['tax'] ?>"> -->
 <a class="btn btn-danger" href="remove.php?product_id=<?php echo $product_id; ?>">Remove</a>
 
@@ -41,6 +41,9 @@ $cart = $_SESSION['cart'];
       <?php } ?>
     </tbody>
   </table>
+
+  <p>Total: <?php  print_r($_SESSION['cart_details']['cart_total_price']); ?></p>
+
 
   <!-- <p>Total: $<?php echo number_format(array_sum(array_column($cart, 'price')), 2); ?></p> -->
 <!-- 

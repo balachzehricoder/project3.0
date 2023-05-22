@@ -39,9 +39,11 @@
 		        	<li class="nav-item"><a href="#" class="nav-link">Privecy Policy</a></li>
 				 <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
 					<?php
-					  $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
-					  echo $cart_count;
+					//   $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+					//   echo $cart_count;
 				  
+
+					print_r($_SESSION['cart_details']['cart_total_qty']);
 					?>
 				   
 				  </i>     </a>

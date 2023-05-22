@@ -38,13 +38,32 @@ if (!isset($_SESSION['cart'][$product_id])) {
   $_SESSION['cart'][$product_id] = array(
     'name' => $p_name,
     'price' => $p_price,
+    'price_total' => $p_price,
     'quantity' => 1,
     'image' => $img_upload
-
   );
 } else {
   $_SESSION['cart'][$product_id]['quantity']++;
+  $_SESSION['cart'][$product_id]['price_total'] = $p_price * $_SESSION['cart'][$product_id]['quantity'] ;
 }
+
+$_SESSION['cart_details']['cart_total_price'] = 0;
+$_SESSION['cart_details']['cart_total_qty'] = 0;
+
+foreach ($_SESSION['cart'] as $prod_id => $prod) {
+// print_r($prod);
+
+	$_SESSION['cart_details']['cart_total_price'] += $prod['price_total'];
+	$_SESSION['cart_details']['cart_total_qty'] += $prod['quantity'];
+}
+
+
+
+
+// print_r($_SESSION['cart_details']['cart_total_price']);
+// echo "<br>";
+// print_r($_SESSION['cart_details']['cart_total_qty']);
+// exit;
 
 // Redirect the user back to the main page.
 header('Location: index.php');
