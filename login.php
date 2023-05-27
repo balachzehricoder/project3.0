@@ -149,10 +149,9 @@ if (isset($_POST["signin"])) {
     <div class="panels-container">
       <div class="panel left-panel">
         <div class="content">
-          <h3>New here?</h3>
+          <h3>our work ?</h3>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-            ex ratione. Aliquid!
+            we are dealing in used and new phones  and all brand in pakistans
           </p>
           <button class="btn transparent" id="sign-up-btn">
             Sign up
@@ -162,10 +161,9 @@ if (isset($_POST["signin"])) {
       </div>
       <div class="panel right-panel">
         <div class="content">
-          <h3>One of us?</h3>
+          <h3>who we are ?</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            laboriosam ad deleniti.
+          we are bigest online  phone dealer in pakistan we deal in used and new phones and all brand
           </p>
           <button class="btn transparent" id="sign-in-btn">
             Sign in
