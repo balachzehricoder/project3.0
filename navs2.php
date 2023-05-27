@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,10 +19,10 @@
 		height: 50px;
 	}</style>
 	<body>
-	<section class="ftco-section">
+	<section class="section">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-6 text-center ">
+				<div class="col-md-12 text-center ">
 				</div>
 			</div>
 		</div>
@@ -37,7 +39,11 @@
 		        	<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
 		        	<li class="nav-item"><a href="#" class="nav-link">About</a></li>
 		        	<li class="nav-item"><a href="#" class="nav-link">Privecy Policy</a></li>
+
 				 <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
+
+
+
 					<?php
 					//   $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 					//   echo $cart_count;
@@ -48,15 +54,20 @@
 				   
 				  </i>     </a>
                   </li>
+				  <a href="logout.php"><button type="button" class="btn btn-danger">LOG OUT</button></a>
+
 				 
 		        </ul>
 		      </div>
 		    </div>
 		  </nav>
     <!-- END nav -->
-  </div>
+	
 
 	</section>
+
+
+	
 
 	<script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>

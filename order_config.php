@@ -1,3 +1,50 @@
+<?php
+// Retrieve order data from the database based on $order_id
+// Replace this code with your database query or logic to fetch order details
+
+$product_id = $_GET['id']; // Assuming you are passing the order ID as a query parameter
+
+// Connect to your database
+include 'config.php';
+if (!$conn) {
+  echo die("conn failed" . mysqli_connect_errno());
+}
+
+// Fetch the order data from the database
+$sql = "SELECT * FROM ORDERS WHERE order_id = '$product_id'";
+$result = $conn->query($sql);
+
+// Check if the order exists
+if ($result->num_rows > 0) {
+  $order = $result->fetch_assoc();
+
+  // Retrieve the order details
+  $order_number = $order['order_number'];
+  $date = $order['date'];
+  $terms = $order['terms'];
+
+  // Retrieve the items associated with the order
+  $items = array();
+  $itemSql = "SELECT * FROM ORDER_ITEMS WHERE order_id = '$product_id'";
+  $itemResult = $conn->query($itemSql);
+  while ($item = $itemResult->fetch_assoc()) {
+    $items[] = $item;
+  }
+
+  // Retrieve the subtotal, tax, shipping, and total
+  $subtotal = $order['subtotal'];
+  $tax = $order['tax'];
+  $shipping = $order['shipping'];
+  $total = $order['total'];
+} else {
+  // Handle case where order does not exist
+  echo "Order not found.";
+  exit;
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,15 +73,15 @@
     <table class="meta">
       <tr>
         <th>Invoice Number</th>
-        <td>123456</td>
+        <td><?php echo $order_number; ?></td>
       </tr>
       <tr>
         <th>Date</th>
-        <td>2023-05-24</td>
+        <td><?php echo $date; ?></td>
       </tr>
       <tr>
         <th>Terms</th>
-        <td>Net 30</td>
+        <td><?php echo $terms; ?></td>
       </tr>
     </table>
     <table class="items">
@@ -48,37 +95,32 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Widget</td>
-          <td>A widget is a thing that does things.</td>
-          <td>1</td>
-          <td>$100</td>
-          <td>$100</td>
-        </tr>
-        <tr>
-          <td>Gizmo</td>
-          <td>A gizmo is a thing that does other things.</td>
-          <td>2</td>
-          <td>$50</td>
-          <td>$100</td>
-        </tr>
+        <?php foreach ($items as $item) { ?>
+          <tr>
+            <td><?php echo $item['item']; ?></td>
+            <td><?php echo $item['description']; ?></td>
+            <td><?php echo $item['quantity']; ?></td>
+            <td><?php echo $item['unit_price']; ?></td>
+            <td><?php echo $item['total']; ?></td>
+          </tr>
+        <?php } ?>
       </tbody>
       <tfoot>
         <tr>
           <th colspan="4">Subtotal</th>
-          <td>$200</td>
+          <td><?php echo $subtotal; ?></td>
         </tr>
         <tr>
           <th colspan="4">Tax</th>
-          <td>$20</td>
+          <td><?php echo $tax; ?></td>
         </tr>
         <tr>
           <th colspan="4">Shipping</th>
-          <td>$10</td>
+          <td><?php echo $shipping; ?></td>
         </tr>
         <tr>
           <th colspan="4">Total</th>
-          <td>$230</td>
+          <td><?php echo $total; ?></td>
         </tr>
       </tfoot>
     </table>
