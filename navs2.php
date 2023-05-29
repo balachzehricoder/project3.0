@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -45,11 +43,11 @@
 
 
 					<?php
-					//   $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
-					//   echo $cart_count;
+					  $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+					  echo $cart_count;
 				  
 
-					print_r($_SESSION['cart_details']['cart_total_qty']);
+					// print_r($_SESSION['cart_details']['cart_total_qty']);
 					?>
 				   
 				  </i>     </a>
