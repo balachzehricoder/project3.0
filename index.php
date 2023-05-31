@@ -22,6 +22,9 @@ include 'navs2.php';
 .carimg{
     height: 400px;
 }
+.text{
+    color: black;
+}
     </style>
 
 <div class="container-fluid pt-5 mt-5">
@@ -38,12 +41,13 @@ include 'navs2.php';
                 $img_upload = $row['img_upload'];
         ?>
 
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+       <a href="full_page.php?id=<?php echo $row['id']; ?>" >
+ <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
             <div class="card main" style="width: 18rem;">
                 <img src="<?php echo $img_upload ?>" class="card-img-top carimg" alt="...">
                 <div class="card-body">
-                    <p class="card-title">name: <?php echo $p_name ?></p>
-                    <p class="card-text">price: <?php echo $p_price ?>  Rp</p>
+                    <p class="card-title text">name: <?php echo $p_name ?></p>
+                    <p class="card-text text">price: <?php echo $p_price ?>  Rp</p>
                     <a href="add-to-cart.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Add to Cart</a>
                 </div>
             </div>
@@ -55,7 +59,7 @@ include 'navs2.php';
         ?>
     </div>
 </div>
-
+</a>
 </body>
 </html>
 <!-- echo '<li>

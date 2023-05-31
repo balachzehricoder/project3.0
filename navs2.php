@@ -10,6 +10,8 @@
 	<script src="https://kit.fontawesome.com/20034a5f5a.js" crossorigin="anonymous"></script>
 	
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="phonesell.com_logo.png">
+
 
 	</head>
 	<style>

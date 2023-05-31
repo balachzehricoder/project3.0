@@ -1,3 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/20034a5f5a.js" crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="phonesell.com_logo.png">
+
+
+	</head>
+	<style>
+	.img{
+		height: 50px;
+	}</style>
+	<body>
+	<section class="section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12 text-center ">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+		    <div class="container">
+		    	<a class="navbar-brand" href="index.php"><img class="img" src="phonesell.com_logo.png" alt=""></a>
+		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="fa fa-bars"></span> Menu
+		      </button>
+		      <div class="collapse navbar-collapse" id="ftco-nav">
+		        <ul class="navbar-nav ml-auto mr-md-3">
+		        	<li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">About</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Privecy Policy</a></li>
+
+				 <!-- <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
+
+
+
+					<?php
+					  $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+					  echo $cart_count;
+				  
+
+					// print_r($_SESSION['cart_details']['cart_total_qty']);
+					?>
+				   
+				  </i>     </a>
+                  </li>
+				  <a href="logout.php"><button type="button" class="btn btn-danger">LOG OUT</button></a>
+
+				  -->
+		        </ul>
+		      </div>
+		    </div>
+		  </nav>
+    <!-- END nav -->
+	
+
+	</section>
+
+
+	
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
+</html>
+
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
@@ -157,11 +237,10 @@ if (isset($_POST['submit'])) {
               </optgroup>
             </select>
           </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-         <a  herf="config_cart.php?product_id=<?php echo $product_id; ?>"> <input class="btn btn-danger" type="submit" name="submit" value="Check out"></a><
+         <a href="config_cart.php?product_id=<?php echo $product_id; ?>" type="submit" name="submit" class="btn btn-danger" >checkout</a>
+          
+        
+
         </form>
       </div>
     </div>
