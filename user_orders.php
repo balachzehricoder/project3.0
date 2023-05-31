@@ -3,11 +3,8 @@
 
 session_start();
 include 'config.php';
-$id = $_SESSION["user_id"];
-if (!isset($_SESSION["user_id"])) {
-	header("Location: login.php");
-	exit();
-  }
+
+  
   
   
 ?>
@@ -49,9 +46,8 @@ if (!isset($_SESSION["user_id"])) {
 		      <div class="collapse navbar-collapse" id="ftco-nav">
 		        <ul class="navbar-nav ml-auto mr-md-3">
 		        	<li class="nav-item active"><a href="index.php" class="nav-link">user managment</a></li>
-		        	<li class="nav-item"><a href="user_orders.php" class="nav-link">order history</a></li>
-		        	<li class="nav-item"><a href="#" class="nav-link">About</a></li>
-		        	<li class="nav-item"><a href="#" class="nav-link">Privecy Policy</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">order history</a></li>
+		        	
 					<!-- <a href="profile.php"><i class="fa-solid fa-user"></i></a> -->
 				 <!-- <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
 
@@ -100,13 +96,16 @@ if (!isset($_SESSION["user_id"])) {
 
 
 <?php
-$query = "SELECT * FROM users where id='$id' ";
+
+
+$id = $_SESSION["user_id"];
+
+$query = "SELECT * FROM orders where id='$id' ";
 $result = $conn->query($query);
 if($result->num_rows > 0){
     foreach($result as $row){
-        $full_name = $row['full_name'];
-        $email = $row['email'];
-        $phone = $row['phone'];
+        $order_id = $row['order_id'];
+       
 ?>
 
 <div class="container">
@@ -114,7 +113,7 @@ if($result->num_rows > 0){
     <div class="table-title">
       <div class="row">
         <div class="col-sm-6">
-          <h2>Manage <b>user</b></h2>
+          <h2>order <b>history</b></h2>
         </div>
         <style>    body {
         color: #566787;
@@ -356,11 +355,10 @@ if($result->num_rows > 0){
           </th>
           <th>ID</th>
 
-          <th>Name</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Phone</th>
-          <th>Actions</th>
+          <th>id</th>
+          <th>product name</th>
+          <th>product price</th>
+        
         </tr>
       </thead>
       <tbody>
@@ -371,10 +369,8 @@ if($result->num_rows > 0){
 								<label for="checkbox1"></label>
 							</span>
           </td>
-          <td><?php echo $id ?></td>
-          <td><?php echo $full_name ?></td>
-          <td><?php echo $email ?></td>
-          <td><?php echo $phone ?></td>
+          <td><?php echo $order_id ?></td>
+          
           <td>
          
           </td>

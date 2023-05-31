@@ -61,7 +61,15 @@
 				   
 				  </i>     </a>
                   </li>
-				  <a href="logout.php"><button type="button" class="btn btn-danger">LOG OUT</button></a>
+				  <?php 
+				  if (!isset($_SESSION["user_id"])) {
+
+					exit();
+				  }
+				  
+				 
+				 ?>
+					<a href="logout.php"><button type="button" class="btn btn-danger">LOG OUT</button></a>
 
 				 
 		        </ul>
