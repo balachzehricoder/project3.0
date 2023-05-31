@@ -11,33 +11,33 @@ if (empty($_SESSION['cart'])) {
 
 $cart = $_SESSION['cart'];
 
-include 'config.php';
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+// include 'config.php';
+// if (!$conn) {
+//   die("Connection failed: " . mysqli_connect_error());
+// }
 
-// Insert order into the database
-foreach ($cart as $product_id => $product) {
-  $name = $product['name'];
-  $price = $product['price'];
-  $qty = $product['quantity'];
-  $total = $product['price'] * $product['quantity'];
+// // Insert order into the database
+// foreach ($cart as $product_id => $product) {
+//   $name = $product['name'];
+//   $price = $product['price'];
+//   $qty = $product['quantity'];
+//   $total = $product['price'] * $product['quantity'];
 
-  $sql = "INSERT INTO ORDERS (name, price, qty, total) VALUES ('$name', '$price', '$qty', '$total')";
+//   $sql = "INSERT INTO ORDERS (name, price, qty, total) VALUES ('$name', '$price', '$qty', '$total')";
 
-  if (!$conn->query($sql)) {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-    exit;
-  }
-}
+//   if (!$conn->query($sql)) {
+//     echo "Error: " . $sql . "<br>" . $conn->error;
+//     exit;
+//   }
+// }
 
 // Retrieve the order ID from the last inserted order
-$order_id = mysqli_insert_id($conn);
+// $order_id = mysqli_insert_id($conn);
 
-$conn->close();
+// $conn->close();
 
 // Clear the cart after inserting the order
-$_SESSION['cart'] = [];
+
 
 // Generate the user bill and display it
 ?>

@@ -39,17 +39,24 @@
 		        	<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
 		        	<li class="nav-item"><a href="#" class="nav-link">About</a></li>
 		        	<li class="nav-item"><a href="#" class="nav-link">Privecy Policy</a></li>
-
+					<a href="profile.php"><i class="fa-solid fa-user"></i></a>
 				 <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
 
 
 
 					<?php
-					  $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
-					  echo $cart_count;
+					//   $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+					//   echo $cart_count;
 				  
 
-					// print_r($_SESSION['cart_details']['cart_total_qty']);
+					if(isset($_SESSION['cart_details']['cart_total_qty']))
+					{
+						print_r($_SESSION['cart_details']['cart_total_qty']);
+					}
+					else
+					{
+						print_r(0);
+					}
 					?>
 				   
 				  </i>     </a>

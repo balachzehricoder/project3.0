@@ -14,6 +14,8 @@ if (isset($_POST["signup"])) {
   $email = mysqli_real_escape_string($conn, $_POST["signup_email"]);
   $phone = mysqli_real_escape_string($conn, $_POST["signup_phone"]);
 
+  $address = mysqli_real_escape_string($conn, $_POST["signup_address"]);
+
   $password = mysqli_real_escape_string($conn, $_POST["signup_password"]);
   $cpassword = mysqli_real_escape_string($conn, $_POST["signup_cpassword"]);
 
@@ -28,12 +30,14 @@ if (isset($_POST["signup"])) {
     } else {
       // Insert new user into the database
       $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Use password_hash() for secure password hashing
-      $sql = "INSERT INTO users (full_name, email, phone, password) VALUES ('$full_name', '$email', '$phone', '$hashed_password')";
+      $sql = "INSERT INTO users (full_name, email,  phone, address , password, role) VALUES ('$full_name', '$email', '$phone', '$address' , '$hashed_password', 'user')";
       $result = mysqli_query($conn, $sql);
       if ($result) {
         $_POST["signup_full_name"] = "";
         $_POST["signup_email"] = "";
         $_POST["signup_password"] = "";
+        $_POST["signup_address"] = "";
+
         $_POST["signup_cpassword"] = "";
         echo "<script>alert('User registration successful');</script>";
       } else {
@@ -55,6 +59,8 @@ if (isset($_POST["signin"])) {
     $stored_password = $row['password'];
     if (password_verify($password, $stored_password)) {
       $_SESSION["user_id"] = $row['id'];
+      $_SESSION["user_name"] = $row['full_name'];
+      $_SESSION["role"] = $row['role'];
       header("Location: index.php");
       exit();
     } else {
@@ -413,6 +419,10 @@ h6 span{
 											</div>
                       <div class="form-group mt-2">
 												<input type="number" name="signup_phone" class="form-style" placeholder="Your phone" id="logemail" autocomplete="off">
+												<i class="input-icon uil uil-at"></i>
+											</div>
+                      <div class="form-group mt-2">
+												<input type="text" name="signup_address" class="form-style" placeholder="Your adderss" id="logemail" autocomplete="off">
 												<i class="input-icon uil uil-at"></i>
 											</div>	
 											<div class="form-group mt-2">
