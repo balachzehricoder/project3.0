@@ -1,6 +1,5 @@
- <?php 
+<?php 
 include 'config.php';
-include 'navs2.php';
 
 $id = $_GET['id'];
 
@@ -18,7 +17,7 @@ if($result->num_rows > 0){
 
 
 
-<?php }}?>
+
 
 
 
@@ -440,3 +439,4 @@ if($result->num_rows > 0){
                 }
             });
 		});</script>
+		<?php }}?>

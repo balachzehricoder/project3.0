@@ -1,15 +1,12 @@
+<!-- 
+
 <?php
 
 
 session_start();
 include 'config.php';
 $id = $_SESSION["user_id"];
-if (!isset($_SESSION["user_id"])) {
-	header("Location: login.php");
-	exit();
-  }
-  
-  
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -49,7 +46,7 @@ if (!isset($_SESSION["user_id"])) {
 		      <div class="collapse navbar-collapse" id="ftco-nav">
 		        <ul class="navbar-nav ml-auto mr-md-3">
 		        	<li class="nav-item active"><a href="index.php" class="nav-link">user managment</a></li>
-		        	<li class="nav-item"><a href="user_orders.php" class="nav-link">order history</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">order history</a></li>
 		        	<li class="nav-item"><a href="#" class="nav-link">About</a></li>
 		        	<li class="nav-item"><a href="#" class="nav-link">Privecy Policy</a></li>
 					<!-- <a href="profile.php"><i class="fa-solid fa-user"></i></a> -->
@@ -100,15 +97,13 @@ if (!isset($_SESSION["user_id"])) {
 
 
 <?php
-$query = "SELECT * FROM users where id='$id' ";
+$query = "SELECT * FROM orders where id='$id' ";
 $result = $conn->query($query);
 if($result->num_rows > 0){
     foreach($result as $row){
-        $full_name = $row['full_name'];
+        $full_name = $row['order_id'];
         $email = $row['email'];
         $phone = $row['phone'];
-		$address = $row['address'];
-
 ?>
 
 <div class="container">
@@ -376,13 +371,10 @@ if($result->num_rows > 0){
           <td><?php echo $id ?></td>
           <td><?php echo $full_name ?></td>
           <td><?php echo $email ?></td>
-          <td><?php echo $address ?></td>
+          <td><?php echo $phone ?></td>
           <td>
-		  <?php echo $phone ?>
+         
           </td>
-		  <td>
-			<a href="edit_profile.php">Edit Profile</a>
-		  </td>
         </tr>
         <tr>
          
@@ -390,3 +382,4 @@ if($result->num_rows > 0){
 
 
 <?php }}?>
+ -->
