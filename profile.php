@@ -338,7 +338,7 @@ if($result->num_rows > 0){
 		font-weight: normal;
 	}	
 </style>
-        <div class="col-sm-6">
+        <div class="col-sm-12 col-md-12 col-xl-12">
         
 
         </div>

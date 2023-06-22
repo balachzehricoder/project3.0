@@ -1,7 +1,11 @@
 <?php
-session_start();
-include 'config.php';
-include 'navs2.php';
+
+
+
+    session_start();
+
+    include 'config.php';
+    include 'navs2.php';
 ?>
 
 <!DOCTYPE html>

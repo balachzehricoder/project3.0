@@ -254,7 +254,7 @@ if (isset($_POST['submit'])) {
 <body>
   <div class="container mt-5">
     <div class="row">
-      <div class="col-md-6 col-sm-12  cart">
+      <div class="col-md-12 col-sm-12  cart">
         <h1 class="empty">Your Cart</h1>
         <table class="table">
           <thead>
@@ -283,8 +283,7 @@ if (isset($_POST['submit'])) {
         <br><br><br>
         <h3 class="total">Total: <?php echo $_SESSION['cart_details']['cart_total_price']; ?></h3>
       </div>
-      <div class="col-md-6">
-        <h1 class="empty">User Info</h1>
+     
         <!-- <form action="" method="post">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name</label>
@@ -323,7 +322,7 @@ if (isset($_POST['submit'])) {
         </form> -->
 
         <form action="" method="POST">
-          <button type="submit" name="submit">Checkout</button>
+          <button type="submit" class="btn btn-danger" name="submit">Checkout</button>
         </form>
         <!-- <a href="config_cart.php?product_id=<?php echo $product_id; ?>" type="submit" name="submit" class="btn btn-danger">checkout</a> -->
 

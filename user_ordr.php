@@ -1,5 +1,16 @@
 <!-- 
+<?php
 
+
+$id = $_SESSION["user_id"];
+
+$query = "SELECT * FROM orders where id='$id' ";
+$result = $conn->query($query);
+if($result->num_rows > 0){
+    foreach($result as $row){
+        $order_id = $row['order_id'];
+       
+?>
 <?php
 
 
