@@ -15,6 +15,9 @@
 
 	</head>
 	<style>
+		.nav{
+			border: 0px;
+		}
 	.img{
 		height: 50px;
 	}</style>
@@ -22,12 +25,12 @@
 	<section class="section">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-12 text-center ">
+				<div class="col-md-12 text-center  ">
 				</div>
 			</div>
 		</div>
 		<div class="container">
-			<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+			<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light nav" id="ftco-navbar">
 		    <div class="container">
 		    	<a class="navbar-brand" href="index.php"><img class="img" src="phonesell.com_logo.png" alt=""></a>
 		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
