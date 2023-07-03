@@ -171,29 +171,27 @@ if (isset($_POST['submit'])) {
 
 
 
-    // foreach ($cart as $product_id => $product) {
-    //   $product_name = mysqli_real_escape_string($conn, $product['name']);
-    //   $price = $product['price'];
-    //   $qty = $product['quantity'];
-    //   $total = $product['price'] * $product['quantity'];
+    foreach ($cart as $product_id => $product) {
+      // $product_name = mysqli_real_escape_string($conn, $product['name']);
+      $price = $product['price'];
+      $qty = $product['quantity'];
+      // $total_price = $product['price_total'];
 
-    //   $sql = "INSERT INTO ORDERS (user_id, total, delivery_charges, order_date_time) VALUES ('$user_id', '$total', '$delivery_charges', '$order_date_time')";
+      $sql = "INSERT INTO order_details (order_id, product_id, price, qty) VALUES ('$order_id', '$product_id', '$price', '$qty')";
 
-    //   if ($conn->query($sql) === TRUE) {
-    //     $insert = true;
-    //     $_SESSION['cart'] = [];
-    //   } else {
-    //     echo "Error: $sql <br> " . $conn->error;
-    //   }
-    // }
+      if ($conn->query($sql) === TRUE) {
+        $insert = true;
+        $_SESSION['cart'] = [];
+      } else {
+        echo "Error: $sql <br> " . $conn->error;
+      }
+    }
 
 
     $insert = true;
     $_SESSION['cart'] = null;
     $_SESSION['cart_details'] = null;
 
-
-    exit;
     header("location: index.php");
     exit;
   } else {

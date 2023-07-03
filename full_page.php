@@ -1,4 +1,6 @@
 <?php 
+session_start();
+include 'navs2.php';
 include 'config.php';
 
 $id = $_GET['id'];
@@ -340,12 +342,14 @@ if($result->num_rows > 0){
 	        				
 	        			<div class="product-count">
 	        				<label for="size">Quantity</label>
-	        				<form action="#" class="display-flex">
+	        				<form action="add-to-cart.php" method="get" class="display-flex">
+								<input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 							    <div class="qtyminus">-</div>
 							    <input type="text" name="quantity" value="1" class="qty">
 							    <div class="qtyplus">+</div>
+
+								<input type="submit" value="Add to Cart" class="round-black-btn">
 							</form>
-							<a href="add-to-cart.php?id=<?php echo $row['id']; ?>" class="round-black-btn">Add to Cart</a>
 	        			</div>
 	        		</div>
 	        	</div>

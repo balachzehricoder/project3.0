@@ -11,6 +11,11 @@ if (!isset($_GET['id'])) {
 // Retrieve the product ID.
 $product_id = $_GET['id'];
 
+
+if (isset($_GET['quantity'])) {
+  $p_qty = $_GET['quantity'];
+}
+
 // Check if the product exists in the database.
 $query = "SELECT * FROM products WHERE id = '$product_id'";
 $result = $conn->query($query);
@@ -24,7 +29,6 @@ if ($result->num_rows === 0) {
 $product = $result->fetch_assoc();
 $p_name = $product['p_name'];
 $p_price = $product['p_price'];
-$p_qty = $product['p_qty'];
 
 $img_upload = $product['img_upload'];
 
@@ -38,14 +42,20 @@ if (!isset($_SESSION['cart'][$product_id])) {
   $_SESSION['cart'][$product_id] = array(
     'name' => $p_name,
     'price' => $p_price,
-    'price_total' => $p_price,
-    'quantity' => 1,
+    'quantity' => isset($p_qty)?$p_qty:1,
     'image' => $img_upload
   );
 } else {
-  $_SESSION['cart'][$product_id]['quantity']++;
-  $_SESSION['cart'][$product_id]['price_total'] = $p_price * $_SESSION['cart'][$product_id]['quantity'] ;
+  if(isset($p_qty))
+  {
+    $_SESSION['cart'][$product_id]['quantity'] = $p_qty;
+  }
+  else
+  {
+    $_SESSION['cart'][$product_id]['quantity']++;
+  }
 }
+$_SESSION['cart'][$product_id]['price_total'] = $p_price * $_SESSION['cart'][$product_id]['quantity'] ;
 
 $_SESSION['cart_details']['cart_total_price'] = 0;
 $_SESSION['cart_details']['cart_total_qty'] = 0;
@@ -67,4 +77,3 @@ foreach ($_SESSION['cart'] as $prod_id => $prod) {
 
 // Redirect the user back to the main page.
 header('Location: index.php');
-?>
