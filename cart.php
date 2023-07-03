@@ -192,27 +192,14 @@ if (isset($_POST['submit'])) {
     $_SESSION['cart'] = null;
     $_SESSION['cart_details'] = null;
 
-    header("location: index.php");
+
+    // emails
+
+    header("location: invoice.php?orderid=<?php echo $order_id; ?>");
     exit;
   } else {
     echo "Error: $sql <br> " . $conn->error;
   }
-
-  // foreach ($cart as $product_id => $product) {
-  //   $product_name = mysqli_real_escape_string($conn, $product['name']);
-  //   $price = $product['price'];
-  //   $qty = $product['quantity'];
-  //   $total = $product['price'] * $product['quantity'];
-
-  //   $sql = "INSERT INTO ORDERS (user_id, total, delivery_charges, order_date_time) VALUES ('$user_id', '$total', '$delivery_charges', '$order_date_time')";
-
-  //   if ($conn->query($sql) === TRUE) {
-  //     $insert = true;
-  //     $_SESSION['cart'] = [];
-  //   } else {
-  //     echo "Error: $sql <br> " . $conn->error;
-  //   }
-  // }
 
   $conn->close();
 }
