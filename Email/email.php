@@ -1,41 +1,44 @@
 <?php
+session_start();
 
-/* 
-	https://github.com/PHPMailer/PHPMailer
-
-	Download PHPMailer, open the zip file and extract the folder to your project directory.
-
-	Rename the extracted directory to PHPMailer and write the below code inside of your php script (the script must be outside of the PHPMailer folder)
-*/
-
-
-// PHPMailer classes into the global namespace
-use PHPMailer\PHPMailer\PHPMailer; 
+use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-// Base files 
+
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
-// create object of PHPMailer class with boolean parameter which sets/unsets exception.
-$mail = new PHPMailer(true);                              
-try {
-    $mail->isSMTP(); // using SMTP protocol                                     
-    $mail->Host = 'smtp.gmail.com'; // SMTP host as gmail 
-    $mail->SMTPAuth = true;  // enable smtp authentication                             
-    $mail->Username = 'wajiha.work@gmail.com';  // sender gmail host              
-    $mail->Password = 'dfdf'; // sender gmail host password                          
-    $mail->SMTPSecure = 'tls';  // for encrypted connection                           
-    $mail->Port = 587;   // port for SMTP     
 
-    $mail->setFrom('wajiha.work@gmail.com', "Sender"); // sender's email and name
-    $mail->addAddress('wajihamuzaffarali@gmail.com', "Receiver");  // receiver's email and name
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = $_POST['email'];
+    $_SESSION['recipient_email'] = $email; // Store the email in a session variable for later use
+}
 
-    $mail->Subject = 'Test subject';
-    $mail->Body    = 'Test body';
+// Retrieve the recipient email from the session
+$recipientEmail = isset($_SESSION['recipient_email']) ? $_SESSION['recipient_email'] : '';
 
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) { // handle error.
-    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+if (!empty($recipientEmail)) {
+    // Create an instance of PHPMailer class
+    $mail = new PHPMailer(true);
+
+    try {
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'phonesell7896@gmail.com'; // Replace with your Gmail email
+        $mail->Password = 'ijkzkkuwqzjwyapd'; // Replace with your Gmail password
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+
+        $mail->setFrom('phonesell7896@gmail.com', 'Sender');
+        $mail->addAddress($email, 'Receiver');
+
+        $mail->Subject = 'Your bill';
+        $mail->Body = 'Test body';
+
+        $mail->send();
+        echo 'Message has been sent';
+    } catch (Exception $e) {
+        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    }
 }
 ?>
