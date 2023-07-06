@@ -48,8 +48,8 @@ include 'config.php';
 					</button>
 					<div class="collapse navbar-collapse" id="ftco-nav">
 						<ul class="navbar-nav ml-auto mr-md-3">
-							<li class="nav-item active"><a href="index.php" class="nav-link">user managment</a></li>
-							<li class="nav-item"><a href="#" class="nav-link">order history</a></li>
+							<li class="nav-item "><a href="profile.php" class="nav-link">user managment</a></li>
+							<li class="nav-item active"><a href="user_orders.php" class="nav-link">order history</a></li>
 
 							<!-- <a href="profile.php"><i class="fa-solid fa-user"></i></a> -->
 							<!-- <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
