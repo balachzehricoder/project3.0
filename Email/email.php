@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -10,11 +9,11 @@ require 'PHPMailer/src/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'];
-    $_SESSION['recipient_email'] = $email; // Store the email in a session variable for later use
+    $_SESSION['email'] = $email; // Store the email in a session variable for later use
 }
 
 // Retrieve the recipient email from the session
-$recipientEmail = isset($_SESSION['recipient_email']) ? $_SESSION['recipient_email'] : '';
+$Email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 
 if (!empty($recipientEmail)) {
     // Create an instance of PHPMailer class
@@ -32,8 +31,9 @@ if (!empty($recipientEmail)) {
         $mail->setFrom('phonesell7896@gmail.com', 'Sender');
         $mail->addAddress($email, 'Receiver');
 
+        // Update the email address in the mail body
         $mail->Subject = 'Your bill';
-        $mail->Body = 'Test body';
+        $mail->Body = 'Test body for email address ' . $recipientEmail;
 
         $mail->send();
         echo 'Message has been sent';
