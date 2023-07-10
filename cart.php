@@ -195,7 +195,7 @@ if (isset($_POST['submit'])) {
 
     // emails
 
-    header("location: invoice.php?orderid=<?php echo $order_id; ?>");
+    header("Location: invoice.php?orderid=" . $order_id);
     exit;
   } else {
     echo "Error: $sql <br> " . $conn->error;

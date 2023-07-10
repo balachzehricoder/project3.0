@@ -1,4 +1,13 @@
+<?php
+include 'config.php';
 
+
+$orderid = $_GET['orderid'];
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +96,7 @@
 					<a href="#"><span class="ion-ios-arrow-back"></span> &nbsp;Go to Orders History</a>
 				</div>
 			</div>
-			<h4 class="text-center mb-5 weight-600">INVOICE # <strong class="weight-600">108</strong></h4>
+			<h4 class="text-center mb-5 weight-600"> invoice iD : <?php echo $orderid ?> <strong class="weight-600"></strong></h4>
 			<div class="row pb-5 invoice_details_text">
 				<div class="col-md-6">
 				</div>
@@ -107,23 +116,22 @@
 				<div class="invoice-desc-body">
 					<ul>
 						<li class="clearfix">
-							<div class="invoice-sub">Website Design</div>
-							<div class="invoice-rate">PKR 20</div>
-							<div class="invoice-hours">100</div>
-							<div class="invoice-subtotal"><span class="weight-600">PKR 2000</span></div>
-						</li>
-						<li class="clearfix">
-							<div class="invoice-sub">Logo Design</div>
-							<div class="invoice-rate">PKR 20</div>
-							<div class="invoice-hours">100</div>
-							<div class="invoice-subtotal"><span class="weight-600">PKR 2000</span></div>
-						</li>
-						<li class="clearfix">
-							<div class="invoice-sub">Website Design</div>
-							<div class="invoice-rate">PKR 20</div>
-							<div class="invoice-hours">100</div>
-							<div class="invoice-subtotal"><span class="weight-600">PKR 2000</span></div>
-						</li>
+
+						<?php 
+$query = "SELECT * FROM order_details where order_id='$orderid' ";
+$result = $conn->query($query);
+if($result->num_rows > 0){
+    foreach($result as $row){
+        $product = $row['name'];
+        $product = $row['price'];
+        $product = $row['quantity'];
+?>
+
+
+
+ ?>
+							
+						
 						<li class="clearfix">
 							<div class="invoice-sub">Logo Design</div>
 							<div class="invoice-rate">PKR 20</div>
@@ -157,5 +165,5 @@
 	</div>
 
 </body>
-
+<?php }}?>
 </html>
