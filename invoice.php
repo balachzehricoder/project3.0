@@ -1,22 +1,53 @@
 <?php
+session_start();
+
 include 'config.php';
-
-
-$orderid = $_GET['orderid'];
-
+include 'navs1.php';
+$id = $_SESSION["user_id"];
+$query = "SELECT * FROM users where id='$id' ";
+$result = $conn->query($query);
+if($result->num_rows > 0){
+    foreach($result as $row){
+        $full_name = $row['full_name'];
+        $email = $row['email'];
+        $phone = $row['phone'];
+		$address = $row['address'];
 
 
 
 ?>
+
+<?php
+							}
+						}
+						?>
+
+
+
+
+<?php
+
+// Get the order ID from the cart page
+
+$order_id = $_GET['order_id'];
+
+// Retrieve order details from the database
+$query = "SELECT od.*, p_name FROM order_details od JOIN products p ON od.product_id = p.id WHERE od.order_id = '$order_id'";
+$result = $conn->query($query);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>invoice</title>
+	<title>Invoice</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/20034a5f5a.js" crossorigin="anonymous"></script>
+
 	<style>
 		.invoice-wrap {
 			overflow: auto;
@@ -71,7 +102,6 @@ $orderid = $_GET['orderid'];
 		}
 
 		.invoice-desc .invoice-desc-footer .invoice-desc-body {
-			/* min-height: 50px; */
 			padding-bottom: 0;
 		}
 
@@ -93,77 +123,69 @@ $orderid = $_GET['orderid'];
 		<div class="invoice-box">
 			<div class="invoice-header">
 				<div class="logo text-center">
-					<a href="#"><span class="ion-ios-arrow-back"></span> &nbsp;Go to Orders History</a>
+					<a href="user_orders.php"><span class="ion-ios-arrow-back"></span> &nbsp;Go to Orders History</a>
 				</div>
 			</div>
-			<h4 class="text-center mb-5 weight-600"> invoice iD : <?php echo $orderid ?> <strong class="weight-600"></strong></h4>
+			<h4 class="text-center mb-5 weight-600"> Invoice ID: <?php echo $order_id ?></h4>
+			<h4 class="text-center mb-5 weight-600"> USER NAME: <?php echo $full_name ?></h4>
+
 			<div class="row pb-5 invoice_details_text">
 				<div class="col-md-6">
 				</div>
 				<div class="col-md-6">
 					<div class="text-right">
-						<p class=""><strong>phonesell.com</strong></p>
+						<p class="">address:   <strong><?php echo $address ?></strong></p>
+						<p class="">email:   <strong><?php echo $email ?></strong></p>
+						<p class="">phone:   <strong><?php echo $phone ?></strong></p>
+
+
 					</div>
 				</div>
 			</div>
 			<div class="invoice-desc">
 				<div class="invoice-desc-head clearfix">
 					<div class="invoice-sub">Product Name</div>
-                        <div class="invoice-rate">Unit Price</div>
-                        <div class="invoice-hours">Quantity</div>
-                        <div class="invoice-subtotal">Subtotal</div>
+					<div class="invoice-rate">Unit Price</div>
+					<div class="invoice-hours">Quantity</div>
+					<div class="invoice-subtotal">Subtotal</div>
 				</div>
 				<div class="invoice-desc-body">
 					<ul>
-						<li class="clearfix">
 
-						<?php 
-$query = "SELECT * FROM order_details where order_id='$orderid' ";
-$result = $conn->query($query);
-if($result->num_rows > 0){
-    foreach($result as $row){
-        $product = $row['name'];
-        $product = $row['price'];
-        $product = $row['quantity'];
-?>
+						<?php
+						if ($result->num_rows > 0) {
+							while ($row = $result->fetch_assoc()) {
+								$p_name = $row['p_name'];
+								$price = $row['price'];
+								$qty = $row['qty'];
+								$subtotal = $price * $qty;
 
+						?>
+								<li class="clearfix">
+									<div class="invoice-sub"><?php echo $p_name; ?></div>
+									<div class="invoice-rate">PKR <?php echo $price; ?></div>
+									<div class="invoice-hours"><?php echo $qty; ?></div>
+									<div class="invoice-subtotal"><span class="weight-600">PKR <?php echo $subtotal; ?></span></div>
+								</li>
+						<?php
+							}
+						}
+						?>
+								<i class="fa-solid fa-print" onclick="window.print()"></i>
 
-
- ?>
-							
-						
-						<li class="clearfix">
-							<div class="invoice-sub">Logo Design</div>
-							<div class="invoice-rate">PKR 20</div>
-							<div class="invoice-hours">100</div>
-							<div class="invoice-subtotal"><span class="weight-600">PKR 2000</span></div>
-						</li>
 					</ul>
 				</div>
-				<div class="invoice-desc-footer">
-					<div class="invoice-desc-head clearfix">
-						<div class="invoice-sub">Sub-Total</div>
-                            <div class="invoice-rate">Shipping Cost</div>
-                            <div class="invoice-subtotal">Total</div>
-					</div>
-					<div class="invoice-desc-body">
-						<ul>
-							<li class="clearfix">
-								<div class="invoice-sub">
-									<p class="font-14 mb-5"><strong class="weight-600">PKR 120.00</strong></p>
-								</div>
-								<div class="invoice-rate font-20 weight-600">PKR 199.00</div>
-								<div class="invoice-subtotal main_total"><span class="weight-600 font-24">PKR 319.00</span></div>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<h4 class="text-center">Thank You for shopping from phonesell.com</h4>
+				<!-- <h1 style="color: red ; text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; " >total <?php  ?></h1> -->
+				</ul>
 			</div>
-
 		</div>
-	</div>
+		<h4 class="text-center">Thank You for shopping <?php echo $full_name ?> from phonesell.com</h4>
+
+
+            </div>
+        </div>
+    </div>
 
 </body>
-<?php }}?>
+
 </html>
