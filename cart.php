@@ -194,6 +194,7 @@ if (isset($_POST['submit'])) {
 
 
     // emails
+    include 'Email/email.php';
 
     header("Location: invoice.php?order_id=" . $order_id);
     exit;
