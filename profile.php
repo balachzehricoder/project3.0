@@ -352,7 +352,7 @@ if($result->num_rows > 0){
 		  <?php echo $phone ?>
           </td>
 		  <td>
-			<a href="edit_profile.php">Edit Profile</a>
+			<a href="profileedit.php?id=<?php echo $row['id']; ?>">Edit Profile</a>
 		  </td>
         </tr>
         <tr>

@@ -58,7 +58,7 @@ if (!isset($_SESSION["user_id"])) {
               <li class="nav-item"><a href="#" class="nav-link">About</a></li>
               <li class="nav-item"><a href="#" class="nav-link">Privecy Policy</a></li>
 
-              <!-- <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
+               <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
 
 
 
@@ -74,7 +74,6 @@ if (!isset($_SESSION["user_id"])) {
                   </li>
 				  <a href="logout.php"><button type="button" class="btn btn-danger">LOG OUT</button></a>
 
-				  -->
             </ul>
           </div>
         </div>

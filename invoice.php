@@ -37,7 +37,6 @@ $result = $conn->query($query);
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +59,8 @@ $result = $conn->query($query);
 
 		.invoice-box {
 			background: #f9fdf8;
-			width: 800px;
+			width: 100%;
+			max-width: 800px;
 			margin: 0 auto;
 			padding: 20px;
 			border: 1px solid #4cbb17;
@@ -119,72 +119,65 @@ $result = $conn->query($query);
 
 <body class="goto-here">
 
-	<div class="invoice-wrap">
-		<div class="invoice-box">
-			<div class="invoice-header">
-				<div class="logo text-center">
-					<a href="user_orders.php"><span class="ion-ios-arrow-back"></span> &nbsp;Go to Orders History</a>
-				</div>
-			</div>
-			<h4 class="text-center mb-5 weight-600"> Invoice ID: <?php echo $order_id ?></h4>
-			<h4 class="text-center mb-5 weight-600"> USER NAME: <?php echo $full_name ?></h4>
-
-			<div class="row pb-5 invoice_details_text">
-				<div class="col-md-6">
-				</div>
-				<div class="col-md-6">
-					<div class="text-right">
-						<p class="">address:   <strong><?php echo $address ?></strong></p>
-						<p class="">email:   <strong><?php echo $email ?></strong></p>
-						<p class="">phone:   <strong><?php echo $phone ?></strong></p>
-
-
+	<div class="container">
+		<div class="invoice-wrap">
+			<div class="invoice-box">
+				<div class="invoice-header">
+					<div class="logo text-center">
+						<a href="user_orders.php"><span class="ion-ios-arrow-back"></span> &nbsp;Go to Orders History</a>
 					</div>
 				</div>
-			</div>
-			<div class="invoice-desc">
-				<div class="invoice-desc-head clearfix">
-					<div class="invoice-sub">Product Name</div>
-					<div class="invoice-rate">Unit Price</div>
-					<div class="invoice-hours">Quantity</div>
-					<div class="invoice-subtotal">Subtotal</div>
+				<h4 class="text-center mb-5 font-weight-600">Invoice ID: <?php echo $order_id ?></h4>
+				<h4 class="text-center mb-5 font-weight-600">USER NAME: <?php echo $full_name ?></h4>
+
+				<div class="row pb-5 invoice_details_text">
+					<div class="col-md-6">
+					</div>
+					<div class="col-md-6">
+						<div class="text-right">
+							<p class="mb-2">Address: <strong><?php echo $address ?></strong></p>
+							<p class="mb-2">Email: <strong><?php echo $email ?></strong></p>
+							<p class="mb-2">Phone: <strong><?php echo $phone ?></strong></p>
+						</div>
+					</div>
 				</div>
-				<div class="invoice-desc-body">
-					<ul>
-
-						<?php
-						if ($result->num_rows > 0) {
-							while ($row = $result->fetch_assoc()) {
-								$p_name = $row['p_name'];
-								$price = $row['price'];
-								$qty = $row['qty'];
-								$subtotal = $price * $qty;
-
-						?>
-								<li class="clearfix">
-									<div class="invoice-sub"><?php echo $p_name; ?></div>
-									<div class="invoice-rate">PKR <?php echo $price; ?></div>
-									<div class="invoice-hours"><?php echo $qty; ?></div>
-									<div class="invoice-subtotal"><span class="weight-600">PKR <?php echo $subtotal; ?></span></div>
-								</li>
-						<?php
+				<div class="invoice-desc">
+					<div class="invoice-desc-head clearfix">
+						<div class="invoice-sub">Product Name</div>
+						<div class="invoice-rate">Unit Price</div>
+						<div class="invoice-hours">Quantity</div>
+						<div class="invoice-subtotal">Subtotal</div>
+					</div>
+					<div class="invoice-desc-body">
+						<ul>
+							<?php
+							if ($result->num_rows > 0) {
+								while ($row = $result->fetch_assoc()) {
+									$p_name = $row['p_name'];
+									$price = $row['price'];
+									$qty = $row['qty'];
+									$subtotal = $price * $qty;
+							?>
+									<li class="clearfix">
+										<div class="invoice-sub"><?php echo $p_name; ?></div>
+										<div class="invoice-rate">PKR <?php echo $price; ?></div>
+										<div class="invoice-hours"><?php echo $qty; ?></div>
+										<div class="invoice-subtotal"><span class="font-weight-600">PKR <?php echo $subtotal; ?></span></div>
+									</li>
+							<?php
+								}
 							}
-						}
-						?>
-								<i class="fa-solid fa-print" onclick="window.print()"></i>
-
-					</ul>
+							?>
+						</ul>
+					</div>
 				</div>
-				<!-- <h1 style="color: red ; text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; " >total <?php  ?></h1> -->
-				</ul>
+				<div class="text-center mt-4">
+					<i class="fas fa-print" onclick="window.print()"></i>
+				</div>
+				<h4 class="text-center mt-5">Thank You for shopping <?php echo $full_name ?> from phonesell.com</h4>
 			</div>
 		</div>
-		<h4 class="text-center">Thank You for shopping <?php echo $full_name ?> from phonesell.com</h4>
-
-
-            </div>
-        </div>
-    </div>
+	</div>
 
 </body>
 
