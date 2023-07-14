@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>admin</title>
+    <title>users managment</title>
 </head>
 
 <body>
 
 
 <br><br><br>
-        <h2>List of Clients</h2>
+        <h2>List of users</h2>
         <br>
         <table class="table">
             <thead>
