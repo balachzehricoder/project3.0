@@ -43,8 +43,8 @@ session_start();
 		        <ul class="navbar-nav ml-auto mr-md-3">
 		        	<li class="nav-item "><a href="index.php" class="nav-link">Home</a></li>
 		        	<li class="nav-item active"><a href="#" class="nav-link">Contact</a></li>
-		        	<li class="nav-item"><a href="Email/email.php" class="nav-link">About</a></li>
-		        	<li class="nav-item"><a href="#" class="nav-link">Privecy Policy</a></li>
+		        	<li class="nav-item"><a href="aboutus.php" class="nav-link">About</a></li>
+		        	<li class="nav-item"><a href="privecypolice.php" class="nav-link">Privecy Policy</a></li>
 					<a href="profile.php"><i class="fa-solid fa-user"></i></a>
 				 <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
 

@@ -370,7 +370,6 @@ h6 span{
 	display: block;
 }</style>
 <a href="https://front.codes/" class="logo" target="_blank">
-		<img src="https://assets.codepen.io/1462889/fcy.png" alt="">
 	</a>
 <center>
 	<div class="section">
@@ -434,6 +433,8 @@ h6 span{
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<button href="#" type="submit" name="signup" class="btn mt-4">signup</button>
+
+                      
                       </form>
 				      					</div>
 			      					</div>

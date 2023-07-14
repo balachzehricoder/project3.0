@@ -52,4 +52,26 @@ try {
 } catch (Exception $e) { // handle error.
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
+
+
+try {
+    $mail->isSMTP(); // using SMTP protocol                                     
+    $mail->Host = 'smtp.gmail.com'; // SMTP host as gmail 
+    $mail->SMTPAuth = true;  // enable smtp authentication                             
+    $mail->Username = 'phonesell7896@gmail.com';  // sender gmail host              
+    $mail->Password = 'wpeolucbkvtfmljy'; // sender gmail host password                          
+    $mail->SMTPSecure = 'tls';  // for encrypted connection                           
+    $mail->Port = 587;   // port for SMTP     
+
+    $mail->setFrom('phonesell7896@gmail.com', "Sender"); // sender's email and name
+    $mail->addAddress("balachzehr@hotmail.com", "admin");  // receiver's email and name
+
+    $mail->Subject = 'NEW ORDER';
+    $mail->Body    = 'may you have new order pls check it out';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) { // handle error.
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
 ?>
