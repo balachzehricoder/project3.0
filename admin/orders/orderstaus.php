@@ -13,6 +13,9 @@ $stmt->bind_param("si", $status, $id);
 $stmt->execute();
 
 // Step 4: Redirect back to the list of records or show a confirmation message
+header("Location: admin/Email/email.php");
 header("Location: ordersindex.php");
+
+
 exit();
 ?>
