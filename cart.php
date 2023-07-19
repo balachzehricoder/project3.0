@@ -308,10 +308,36 @@ if (isset($_POST['submit'])) {
         </form> -->
 
         <form action="" method="POST">
-          <button type="submit" class="btn btn-danger" name="submit">Checkout</button>
-        </form>
-        <!-- <a href="config_cart.php?product_id=<?php echo $product_id; ?>" type="submit" name="submit" class="btn btn-danger">checkout</a> -->
+  <!-- Add an ID to the button -->
+  <button id="checkoutButton" type="submit" class="btn btn-danger" name="submit">Checkout</button>
+  <!-- Add an ID to the spinner -->
+  <div id="pre" class="spinner-border text-warning visually-hidden" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</form>
 
+        <!-- <a href="config_cart.php?product_id=<?php echo $product_id; ?>" type="submit" name="submit" class="btn btn-danger">checkout</a> -->
+<script>// Function to execute when the button is clicked
+function myfun() {
+  // Start the spinner animation
+  const spinner = document.getElementById('pre');
+  spinner.classList.remove('visually-hidden');
+
+  // Your custom function logic here
+  // For example, let's simulate a delay of 2 seconds using setTimeout
+  setTimeout(() => {
+    console.log('Custom function executed');
+    // Add your actual function code here
+
+    // Stop the spinner animation after the function is completed
+    spinner.classList.add('visually-hidden');
+  }, 11000);
+}
+
+// Add event listener to the button
+const checkoutButton = document.getElementById('checkoutButton');
+checkoutButton.addEventListener('click', myfun);
+</script>
       </div>
     </div>
   </div>

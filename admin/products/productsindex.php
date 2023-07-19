@@ -53,6 +53,8 @@
    
     <td>
         <a class='btn btn-danger btn-sm' href='productsdelete.php?id=$row[id]'>Delete</a>
+        <a class='btn btn-primary btn-sm' href='productedit.php?id=$row[id]'>edit</a>
+
     </td>
 </tr>";
                 }
