@@ -29,9 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $p_name = $row["p_name"];
     $p_price = $row["p_price"];
     $p_qty = $row["p_qty"];
-
-
-
 } else {
     $id = $_POST["id"];
     $p_name = $_POST["p_name"];
@@ -41,15 +38,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 
     do {
-        if (empty($id) || empty($p_name) || empty($p_price) || empty($p_qty) ) {
+        if (empty($id) || empty($p_name) || empty($p_price) || empty($p_qty)) {
             $erroMessage = "ALL the fields are required";
             break;
-      }
-      $sql = "UPDATE products " . // added space after "employee"
-      "SET p_name = '$p_name', p_price = '$p_price', p_qty = '$p_qty'" . // added spaces after each comma
-      "WHERE id = $id";
+        }
+        $sql = "UPDATE products " . // added space after "employee"
+            "SET p_name = '$p_name', p_price = '$p_price', p_qty = '$p_qty'" . // added spaces after each comma
+            "WHERE id = $id";
 
-          $result = $conn->query($sql);
+        $result = $conn->query($sql);
         if (!$result) {
             $erroMessage = "invalid query:" . $conn->error;
             break;
@@ -58,9 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
         header("location: productsindex.php");
         exit;
-
     } while (true);
-
 }
 
 ?>
@@ -73,8 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Office</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 
@@ -94,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 
     <div class="container my-5">
-       
+
         <form method="post">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="row md-3">
@@ -114,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="p_qty" value="<?php echo $p_qty; ?>">
                 </div>
-                
+
             </div>
 
             <?php
@@ -146,9 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         </form>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>
