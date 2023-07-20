@@ -397,7 +397,6 @@ h6 span{
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<button type="submit" name="signin" class="btn mt-4">signin</button>
-                            				<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
 				      					</div>
 			      					</div>
 			      				</div>
