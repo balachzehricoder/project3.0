@@ -44,18 +44,19 @@
                 $p_qty = $row['p_qty'];
                 $img_upload = $row['img_upload'];
         ?>
-
-       <a href="full_page.php?id=<?php echo $row['id']; ?>" >
- <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div class="card main" style="width: 18rem;">
-                <img src="<?php echo $img_upload ?>" class="card-img-top carimg" alt="...">
-                <div class="card-body">
-                    <p class="card-title text">name: <?php echo $p_name ?></p>
-                    <p class="card-text text">price: <?php echo $p_price ?>  Rp</p>
-                    <a href="add-to-cart.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Add to Cart</a>
-                </div>
+<a href="full_page.php?id=<?php echo $row['id']; ?>">
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+        <div class="card main" style="width: 18rem;">
+            <img src="<?php echo $img_upload ?>" class="card-img-top carimg" alt="Product Image">
+            <div class="card-body">
+                <p class="card-title text">Name: <?php echo $p_name ?></p>
+                <p class="card-text text">Price: <?php echo $p_price ?> Rp</p>
+                <a href="add-to-cart.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Add to Cart</a>
             </div>
         </div>
+    </div>
+</a>
+
         
         <?php 
             }
