@@ -29,8 +29,9 @@ $email = $row["email"];
 
 // Step 5: Send the email
 // ... Your existing email sending code ...
+include 'Email/email.php';
 
 // Step 6: Redirect back to the list of records or show a confirmation message
-header("Location: Email/email.php");
+header("Location: order/orderindex.php");
 exit();
 ?>

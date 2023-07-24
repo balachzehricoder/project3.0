@@ -41,8 +41,8 @@ try {
     $mail->SMTPSecure = 'tls';  // for encrypted connection                           
     $mail->Port = 587;   // port for SMTP     
 
-    $mail->setFrom('phonesell7896@gmail.com', "Sender"); // sender's email and name
-    $mail->addAddress($email, "Receiver");  // receiver's email and name
+    $mail->setFrom('phonesell7896@gmail.com', "phonesell.com"); // sender's email and name
+    $mail->addAddress($email, "phonesell.com");  // receiver's email and name
 
     $mail->Subject = 'your conformation';
     $mail->Body    = 'your order has been placed';
@@ -63,8 +63,8 @@ try {
     $mail->SMTPSecure = 'tls';  // for encrypted connection                           
     $mail->Port = 587;   // port for SMTP     
 
-    $mail->setFrom('phonesell7896@gmail.com', "Sender"); // sender's email and name
-    $mail->addAddress("balachzehr@hotmail.com", "admin");  // receiver's email and name
+    $mail->setFrom('phonesell7896@gmail.com', "phonesell.com"); // sender's email and name
+    $mail->addAddress("balachzehr@hotmail.com", "phonesell.com");  // receiver's email and name
 
     $mail->Subject = 'NEW ORDER';
     $mail->Body    = 'may you have new order pls check it out';

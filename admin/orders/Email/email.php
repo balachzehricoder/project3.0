@@ -48,7 +48,7 @@ try {
     $mail->Body    = 'pls rate us on our website';
 
     $mail->send();
-    header("Location: orderindex.php");
+    // header("Location: orderindex.php");
 } catch (Exception $e) { // handle error.
 }
 ?>
