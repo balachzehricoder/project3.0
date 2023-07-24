@@ -33,7 +33,7 @@ require 'PHPMailer/src/SMTP.php';
 // create object of PHPMailer class with boolean parameter which sets/unsets exception.
 $mail = new PHPMailer(true);                              
 try {
-    $mail->isSMTP(); // using SMTP protocol                                     
+    $mail->isSMTP(); // using SMTP protocol                                         
     $mail->Host = 'smtp.gmail.com'; // SMTP host as gmail 
     $mail->SMTPAuth = true;  // enable smtp authentication                             
     $mail->Username = 'phonesell7896@gmail.com';  // sender gmail host              
@@ -41,15 +41,14 @@ try {
     $mail->SMTPSecure = 'tls';  // for encrypted connection                           
     $mail->Port = 587;   // port for SMTP     
 
-    $mail->setFrom('phonesell7896@gmail.com', "Sender"); // sender's email and name
-    $mail->addAddress($email, "your order has been deleverd");  // receiver's email and name
+    $mail->setFrom('phonesell7896@gmail.com', "phonesell.com"); // sender's email and name
+    $mail->addAddress(" $email", "your order has been deleverd");  // receiver's email and name
 
     $mail->Subject = 'your order has been deleverd';
     $mail->Body    = 'pls rate us on our website';
 
     $mail->send();
-    echo 'Message has been sent';
+    header("Location: orderindex.php");
 } catch (Exception $e) { // handle error.
-    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
 ?>
