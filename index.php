@@ -3,6 +3,12 @@
 <head>
     <title>Phonesell.com - Home</title>
 </head>
+<style>
+    .carimg{
+height: 300px;
+width: 300px;
+    }
+</style>
 <body>
     <nav>
     <!-- Your navigation bar or header goes here -->
@@ -10,22 +16,18 @@
    
     
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-        <a class="navbar-brand" href="#">catigory</a>          <?php
+        <a class="navbar-brand" href="#"></a>          <?php
          include 'config.php';
          include 'funcation.php';
-         $categories = getAllCategories();
+        //  $categories = getAllCategories();
 
-         foreach ($categories as $category) {
-             echo '<li class="nav-item" ><a class="nav-link " href="category.php?id=' . $category['id'] . '">' . $category['name'] . '</a></li>';
-         }
+        //  foreach ($categories as $category) {
+        //      echo '<li class="nav-item" ><a class="nav-link " href="category.php?id=' . $category['id'] . '">' . $category['name'] . '</a></li>';
+        //  }
         ?>
         </li>
       </ul>

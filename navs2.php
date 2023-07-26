@@ -42,6 +42,20 @@
 		        	<li class="nav-item"><a href="contactus.php" class="nav-link">Contact</a></li>
 		        	<li class="nav-item"><a href="aboutus.php" class="nav-link">About</a></li>
 		        	<li class="nav-item"><a href="privecypolice.php" class="nav-link">Privecy Policy</a></li>
+					<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          catigroy
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		  <?php
+          $categories = getAllCategories();
+
+         foreach ($categories as $category) {
+             echo '<a class="dropdown-item" href="category.php?id=' . $category['id'] . '">' . $category['name'] . '</a>';
+         }
+        ?>
+        </div>
+      </li>
 					<a href="profile.php"><i class="fa-solid fa-user"></i></a>
 				 <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
 

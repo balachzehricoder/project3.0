@@ -8,22 +8,12 @@ if (isset($_GET['id'])) {
     $category_id = $_GET['id'];
 ?>
     
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<div class="container-fluid">
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-      <a class="navbar-brand" href="#">catigory</a>          <?php
+        <?php
        include 'config.php';
        include 'funcation.php';
        $categories = getAllCategories();
 
-       foreach ($categories as $category) {
-           echo '<li class="nav-item" ><a class="nav-link " href="category.php?id=' . $category['id'] . '">' . $category['name'] . '</a></li>';
-       }
+      
       ?>
       </li>
     </ul>
