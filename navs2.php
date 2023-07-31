@@ -60,6 +60,8 @@
 				 <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
 
 
+				
+
 
 					<?php
 					//   $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
@@ -84,8 +86,51 @@
 					exit();
 				  }
 				  
+
+				  
+		  
 				 
 				 ?>
+				 
+
+<?php
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head content goes here -->
+    <title>Phonesell.com - Home</title>
+    <style>
+        .carimg {
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Your navigation bar or header goes here -->
+        <!-- Add your navigation elements here -->
+    </nav>
+
+    <!-- Search form -->
+    <form method="get" action="search.php">
+        <input type="text" name="q" placeholder="Search products">
+       <a href="search.php"> <input type="submit" value="Search"></a>
+    </form>
+
+  
+        </div>
+    </div>
+
+    <!-- Other HTML content and scripts -->
+</body>
+</html>
+
+
+
 					<a href="logout.php"><button type="button" class="btn btn-danger">LOG OUT</button></a>
 
 				 

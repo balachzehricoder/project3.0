@@ -257,7 +257,7 @@ if (isset($_POST['submit'])) {
               <tr>
                 <td><img class="img" src="<?php echo $product['image']; ?>" alt="Sorry, it is not available yet"></td>
                 <td><?php echo $product['name']; ?></td>
-                <td><?php echo $product['price']; ?></td>
+                <td><?php echo number_format($product['price']); ?></td>
                 <td><?php echo $product['quantity']; ?></td>
                 <td>
                   <a class="btn btn-danger" href="remove.php?product_id=<?php echo $product_id; ?>">Remove</a>
@@ -267,7 +267,7 @@ if (isset($_POST['submit'])) {
           </tbody>
         </table>
         <br><br><br>
-        <h3 class="total">Total: <?php echo $_SESSION['cart_details']['cart_total_price']; ?></h3>
+        <h3 class="total">Total: <?php echo number_format($_SESSION['cart_details']['cart_total_price']); ?></h3>
       </div>
      
         <!-- <form action="" method="post">

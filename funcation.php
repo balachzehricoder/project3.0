@@ -16,4 +16,37 @@ function getAllCategories() {
 }
 
 
+// funcation.php
+// ...
+
+
+// funcation.php
+// ...
+
+function searchProducts($search_query) {
+    global $conn;
+
+    // Prepare the search query
+    $search_query = '%' . $search_query . '%';
+
+    // Fetch products that match the search query
+    $query = "SELECT * FROM products WHERE p_name LIKE ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $search_query);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $products = array();
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+    }
+
+    // Close the statement
+    $stmt->close();
+
+    return $products;
+}
+
+
+
 ?>

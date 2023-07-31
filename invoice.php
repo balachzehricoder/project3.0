@@ -32,6 +32,11 @@ if($result->num_rows > 0){
 $order_id = $_GET['order_id'];
 
 // Retrieve order details from the database
+$query = "SELECT * FROM orders WHERE id = '$order_id'";
+$orders = $conn->query($query);
+$orders = mysqli_fetch_assoc($orders);
+
+// Retrieve order details from the database
 $query = "SELECT od.*, p_name FROM order_details od JOIN products p ON od.product_id = p.id WHERE od.order_id = '$order_id'";
 $result = $conn->query($query);
 
@@ -120,7 +125,7 @@ $result = $conn->query($query);
 <body class="goto-here">
 
 	<div class="container">
-		<div class="invoice-wrap">
+		<div class="invoice-wrap mb-5">
 			<div class="invoice-box">
 				<div class="invoice-header">
 					<div class="logo text-center">
@@ -135,9 +140,9 @@ $result = $conn->query($query);
 					</div>
 					<div class="col-md-6">
 						<div class="text-right">
-							<p class="mb-2">Address: <strong><?php echo $address ?></strong></p>
-							<p class="mb-2">Email: <strong><?php echo $email ?></strong></p>
-							<p class="mb-2">Phone: <strong><?php echo $phone ?></strong></p>
+							<p class="mb-3">Address: <strong><?php echo $address ?></strong></p>
+							<p class="mb-3">Email: <strong><?php echo $email ?></strong></p>
+							<p class="mb-3">Phone: <strong><?php echo $phone ?></strong></p>
 						</div>
 					</div>
 				</div>
@@ -160,9 +165,9 @@ $result = $conn->query($query);
 							?>
 									<li class="clearfix">
 										<div class="invoice-sub"><?php echo $p_name; ?></div>
-										<div class="invoice-rate">PKR <?php echo $price; ?></div>
+										<div class="invoice-rate">PKR <?php echo number_format($price); ?></div>
 										<div class="invoice-hours"><?php echo $qty; ?></div>
-										<div class="invoice-subtotal"><span class="font-weight-600">PKR <?php echo $subtotal; ?></span></div>
+										<div class="invoice-subtotal"><span class="font-weight-600">PKR <?php echo number_format($subtotal); ?></span></div>
 									</li>
 							<?php
 								}
@@ -170,6 +175,24 @@ $result = $conn->query($query);
 							?>
 						</ul>
 					</div>
+					<div class="invoice-desc-footer">
+					<div class="invoice-desc-head clearfix">
+						<div class="invoice-sub">Sub-Total</div>
+                            <div class="invoice-rate">Shipping Cost</div>
+                            <div class="invoice-subtotal">Total</div>
+					</div>
+					<div class="invoice-desc-body">
+						<ul>
+							<li class="clearfix">
+								<div class="invoice-sub">
+									<p class="font-14 mb-5"><strong class="weight-600">PKR <?php echo number_format($orders["total"]); ?></strong></p>
+								</div>
+								<div class="invoice-rate font-20 weight-600">PKR <?php echo number_format($orders["delivery_charges"]); ?></div>
+								<div class="invoice-subtotal main_total"><span class="weight-600 font-24">PKR <?php echo number_format($orders["delivery_charges"] + $orders["total"]); ?></span></div>
+							</li>
+						</ul>
+					</div>
+				</div>
 				</div>
 				<div class="text-center mt-4">
 					<i class="fas fa-print" onclick="window.print()"></i>

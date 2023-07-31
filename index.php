@@ -38,10 +38,7 @@ width: 300px;
     <!-- <h2>Categories:</h2>
     <ul>
         <?php
-        // include 'config.php';
-        // include 'funcation.php';
-        // $categories = getAllCategories();
-
+      
         // foreach ($categories as $category) {
         //     echo '<li><a href="category.php?id=' . $category['id'] . '">' . $category['name'] . '</a></li>';
         // }
@@ -81,6 +78,8 @@ color: black;
 <div class="container-fluid pt-5 mt-5">
 <div class="row px-xl-5 pb-3">
     <?php 
+
+
     $query = "SELECT * FROM products";
     $result = $conn->query($query);
     if($result->num_rows > 0){
@@ -90,6 +89,10 @@ color: black;
             $p_tax = $row['p_tax'];
             $p_qty = $row['p_qty'];
             $img_upload = $row['img_upload'];
+
+
+
+            $p_price = number_format($p_price);
     ?>
 <a href="full_page.php?id=<?php echo $row['id']; ?>">
 <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
@@ -127,3 +130,4 @@ color: black;
 
 </body>
 </html>
+
