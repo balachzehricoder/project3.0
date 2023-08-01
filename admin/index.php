@@ -35,6 +35,8 @@
                     </div>
                 </div>
             </div>
+            <div id="notification"></div>
+
             <div class="app-header__mobile-menu">
                 <div>
                     <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
@@ -1210,4 +1212,26 @@
 </html>
 
 </body>
+<script>
+        // Create a new EventSource to listen for server-sent events
+        const eventSource = new EventSource('notifications.php');
+
+        // Function to handle new order notifications
+        eventSource.onmessage = function(event) {
+            const order = JSON.parse(event.data);
+            displayNotification(order);
+        };
+
+        // Function to display the new order notification
+        function displayNotification(order) {
+            const notificationDiv = document.getElementById('notification');
+            notificationDiv.innerHTML += `<p>New order received: Order ID - ${order.order_id}, Product - ${order.product_name}</p>`;
+        }
+    </script>
+
+
+
+
+
+</script>
 </html>

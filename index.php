@@ -74,6 +74,15 @@ height: 400px;
 color: black;
 }
 </style>
+<!-- Add this form to allow users to input the price range -->
+<form method="get" action="range.php">
+    <label for="minPrice">Min Price:</label>
+    <input type="number" id="minPrice" name="minPrice" min="0">
+    <label for="maxPrice">Max Price:</label>
+    <input type="number" id="maxPrice" name="maxPrice" min="0">
+    <input type="submit" value="Filter">
+</form>
+
 
 <div class="container-fluid pt-5 mt-5">
 <div class="row px-xl-5 pb-3">

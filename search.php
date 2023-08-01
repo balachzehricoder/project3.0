@@ -8,18 +8,12 @@
 
 <style>
     .edit{
-        font: bolder;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-display: unset;
         color: red;
-        text-align: center;
-        font-size: xx-large;
-        font-variant: initial;
-        font-variant-position: super;
-        text-decoration: double;
-        text-shadow: 3cm;
-        text-decoration-color: red;
-        font-language-override: initial;
+    align-items: center;
+    font: 200;
+    font-variant-caps: petite-caps;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
     }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -41,7 +35,7 @@
 
             // Check if the products array is empty after search
             if (empty($products)) {
-                echo '<div class="col-12 edit"><p class="text-danger">No products found for the search query: </p></div>';
+                echo '<center><div class="col-12 edit"><h1 class="text-danger">No products found for the search query: </h1></div></center';
             }
         } else {
             // Fetch all products
