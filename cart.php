@@ -7,7 +7,7 @@ if (!isset($_SESSION["user_id"])) {
   header("Location: login.php");
   exit();
 }
-include 'navs.php'
+// include 'navs.php'
 
 ?>
 
@@ -173,7 +173,7 @@ if (isset($_POST['submit'])) {
       // $total_price = $product['price_total'];
 
       $sql = "INSERT INTO order_details (order_id, product_id, price, qty) VALUES ('$order_id', '$product_id', '$price', '$qty')";
-
+      ob_start(); 
       if ($conn->query($sql) === TRUE) {
         $insert = true;
         $_SESSION['cart'] = [];
@@ -186,11 +186,22 @@ if (isset($_POST['submit'])) {
     $insert = true;
     $_SESSION['cart'] = null;
     $_SESSION['cart_details'] = null;
+?>
 
-
+    <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<?php
     // emails
     include 'Email/email.php';
-
+    
+   
+    
 
     header("Location: invoice.php?order_id=" . $order_id);
     exit;
@@ -200,6 +211,7 @@ if (isset($_POST['submit'])) {
 
   $conn->close();
 }
+ob_end_flush(); 
 ?>
 <body class="js">
 	
@@ -316,7 +328,7 @@ if (isset($_POST['submit'])) {
                       </ul>
                       
                       <div class="button5">
-                      <form action="" method="POST">
+                      <form id="checkoutForm" action="" method="POST">
   <!-- Add an ID to the button -->
   <button id="checkoutButton" type="submit" class="btn btn-danger" name="submit">Checkout</button></form>
                         <a href="index.php" class="btn">Continue shopping</a>
@@ -374,4 +386,21 @@ if (isset($_POST['submit'])) {
 	<script src="js/active.js"></script>
 </body>
 </html> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>   $(document).ready(function() {
+        // Add event listener to the Checkout button
+        $('#checkoutForm').on('submit', function() {
+            // Show the preloader
+            $('#preloader').show();
+        });
+    });
+
+    // After your checkout process is complete (for example, in your PHP script)
+    // Hide the preloader using JavaScript/jQuery
+    // For demonstration purposes, this is a simulated delay
+    setTimeout(function() {
+        $('#preloader').hide();
+    }, 2000); // Replace 2000 with the appropriate delay (in milliseconds)
+</script>
+
 </html>
