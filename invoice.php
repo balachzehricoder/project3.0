@@ -2,7 +2,7 @@
 session_start();
 
 include 'config.php';
-include 'navs1.php';
+include 'navs.php';
 $id = $_SESSION["user_id"];
 $query = "SELECT * FROM users where id='$id' ";
 $result = $conn->query($query);

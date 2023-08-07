@@ -128,7 +128,11 @@
     <!-- Other HTML content and scripts -->
 </body>
 </html>
-
+  <div class="search-top">
+                                <form method="get" action="search.php" class="search-form">
+                                    <input type="text" name="q" placeholder="Search here..." name="search">
+                                    <a href="search.php"></a><button value="search" type="submit"><i class="ti-search"></i></button></a>
+                                </form>
 
 
 					<a href="logout.php"><button type="button" class="btn btn-danger">LOG OUT</button></a>

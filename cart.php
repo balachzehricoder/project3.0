@@ -7,7 +7,7 @@ if (!isset($_SESSION["user_id"])) {
   header("Location: login.php");
   exit();
 }
-
+include 'navs.php'
 
 ?>
 
@@ -27,6 +27,47 @@ if (!isset($_SESSION["user_id"])) {
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="phonesell.com_logo.png">
+<!-- Meta Tag -->
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='copyright' content=''>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Title Tag  -->
+    <title>Eshop - eCommerce HTML5 Template.</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<!-- Web Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+	
+	<!-- StyleSheet -->
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.min.css">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<!-- Fancybox -->
+	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
+	<!-- Themify Icons -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+	<!-- Nice Select CSS -->
+    <link rel="stylesheet" href="css/niceselect.css">
+	<!-- Animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+	<!-- Flex Slider CSS -->
+    <link rel="stylesheet" href="css/flex-slider.min.css">
+	<!-- Owl Carousel -->
+    <link rel="stylesheet" href="css/owl-carousel.css">
+	<!-- Slicknav -->
+    <link rel="stylesheet" href="css/slicknav.min.css">
+	
+	<!-- Eshop StyleSheet -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
 
 
 </head>
@@ -37,52 +78,7 @@ if (!isset($_SESSION["user_id"])) {
 </style>
 
 <body>
-  <section class="section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-12 text-center ">
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-          <a class="navbar-brand" href="index.php"><img class="img" src="phonesell.com_logo.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="fa fa-bars"></span> Menu
-          </button>
-          <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto mr-md-3">
-              <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
-              <li class="nav-item"><a href="contactus.php" class="nav-link">Contact</a></li>
-              <li class="nav-item"><a href="aboutus.php" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="privecypolice.php" class="nav-link">Privecy Policy</a></li>
-
-               <li> <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
-
-
-
-					<?php
-          $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
-          echo $cart_count;
-
-
-          // print_r($_SESSION['cart_details']['cart_total_qty']);
-          ?>
-				   
-				  </i>     </a>
-                  </li>
-				  <a href="logout.php"><button type="button" class="btn btn-danger">LOG OUT</button></a>
-
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- END nav -->
-
-
-  </section>
-
+  
 
 
 
@@ -205,144 +201,177 @@ if (isset($_POST['submit'])) {
   $conn->close();
 }
 ?>
-<!DOCTYPE html>
-<html>
+<body class="js">
+	
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="preloader-inner">
+			<div class="preloader-icon">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+		
+	
+	<!-- Breadcrumbs -->
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="bread-inner">
+						<ul class="bread-list">
+							<li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
+							<li class="active"><a href="blog-single.html">Cart</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Breadcrumbs -->
+			
+	<!-- Shopping Cart -->
+	<div class="shopping-cart section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<!-- Shopping Summery -->
+					<table class="table shopping-summery">
+						<thead>
+							<tr class="main-hading">
+								<th>PRODUCT</th>
+								<th>NAME</th>
+								<th class="text-center">UNIT PRICE</th>
+								<th class="text-center">QUANTITY</th>
+								<th class="text-center">TOTAL</th> 
+								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <style>
-    .empty {
-      color: red;
-      align-items: center;
-      font: 200;
-      font-variant-caps: petite-caps;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: bold;
-    }
-
-    .img {
-      height: 50px;
-    }
-
-    .cart {
-      border-right: 2px;
-    }
-
-    .total {
-      color: green;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-12 col-sm-12  cart">
-        <h1 class="empty">Your Cart</h1>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
             <?php foreach ($cart as $product_id => $product) { ?>
-              <tr>
-                <td><img class="img" src="<?php echo $product['image']; ?>" alt="Sorry, it is not available yet"></td>
-                <td><?php echo $product['name']; ?></td>
-                <td><?php echo number_format($product['price']); ?></td>
-                <td><?php echo $product['quantity']; ?></td>
-                <td>
-                  <a class="btn btn-danger" href="remove.php?product_id=<?php echo $product_id; ?>">Remove</a>
-                </td>
-              </tr>
-            <?php } ?>
-          </tbody>
-        </table>
-        <br><br><br>
-        <h3 class="total">Total: <?php echo number_format($_SESSION['cart_details']['cart_total_price']); ?></h3>
-      </div>
-     
-        <!-- <form action="" method="post">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Name</label>
-            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text"></div>
-          </div>
-
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Phone</label>
-            <input type="phone" name="phone" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Address</label>
-            <input type="text" name="address" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Payment</label>
-            <br>
-            <select name="payment" id="">
-              <optgroup>
-                <option value="visa">Visa</option>
-                <option value="master card">Master Card</option>
-                <option value="online banking">Online Banking</option>
-                <option value="cash on delivery">Cash on Delivery</option>
-              </optgroup>
-            </select>
-          </div>
+              <td class="image" data-title="No"><img src="<?php echo $product['image'] ?>" alt="#"></td>
+								<td class="product-des" data-title="Description">
+									<p class="product-name"><a href="#"><?php echo $product['name'] ?></a></p>
+									
+								</td>
+								<td class="price" data-title="Price"><span>Rp <?php echo number_format($product['price']) ?> </span></td>
+								<td class="qty" data-title="Qty"><!-- Input Order -->
+									<div class="input-group">
+										<div class="button minus">
+											<button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+												<i class="ti-minus"></i>
+											</button>
+										</div>
+										<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="<?php echo $product['quantity'] ?>">
+										<div class="button plus">
+											<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
+												<i class="ti-plus"></i>
+											</button>
+										</div>
+									</div>
+									<!--/ End Input Order -->
+								</td>
+								<td class="total-amount" data-title="Total"><span>Rp <?php echo number_format($product['price']) ?> </span></td>
+								<td class="action" data-title="Remove"><a href="remove.php?product_id=<?php echo $product_id; ?>"><i class="ti-trash remove-icon"></i></a></td>
+							</tr>
+							
+									<!--/ End Input Order -->
+                  <?php } ?>
 
 
-
-        </form> -->
-
-        <form action="" method="POST">
+                  <tr>
+								
+                </tbody>
+              </table>
+              <!--/ End Shopping Summery -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <!-- Total Amount -->
+              <div class="total-amount">
+                <div class="row">
+                  <div class="col-lg-8 col-md-5 col-12">
+                    <div class="left">
+                      <div class="coupon">
+                        <form action="#" target="_blank">
+                          <input name="Coupon" placeholder="Enter Your Coupon">
+                          <button class="btn">Apply</button>
+                        </form>
+                      </div>
+                    
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-7 col-12">
+                    <div class="right">
+                      <ul>
+                        <li>Cart Subtotal<span>Rp <?php echo number_format($_SESSION['cart_details']['cart_total_price']  ) ; ?></span></li>
+                        <li>Shipping<span>200</span></li>
+                        <li>You Save<span>Rp0.00</span></li>
+                        <li class="last">You Pay<span><?php echo number_format($_SESSION['cart_details']['cart_total_price'] + 200 ) ; ?></span></li>
+                      </ul>
+                      
+                      <div class="button5">
+                      <form action="" method="POST">
   <!-- Add an ID to the button -->
-  <button id="checkoutButton" type="submit" class="btn btn-danger" name="submit">Checkout</button>
-  <!-- Add an ID to the spinner -->
-  <div id="pre" class="spinner-border text-warning visually-hidden" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-</form>
-
-        <!-- <a href="config_cart.php?product_id=<?php echo $product_id; ?>" type="submit" name="submit" class="btn btn-danger">checkout</a> -->
-<script>// Function to execute when the button is clicked
-function myfun() {
-  // Start the spinner animation
-  const spinner = document.getElementById('pre');
-  spinner.classList.remove('visually-hidden');
-
-  // Your custom function logic here
-  // For example, let's simulate a delay of 2 seconds using setTimeout
-  setTimeout(() => {
-    console.log('Custom function executed');
-    // Add your actual function code here
-
-    // Stop the spinner animation after the function is completed
-    spinner.classList.add('visually-hidden');
-  }, 11000);
-}
-
-// Add event listener to the button
-const checkoutButton = document.getElementById('checkoutButton');
-checkoutButton.addEventListener('click', myfun);
-</script>
+  <button id="checkoutButton" type="submit" class="btn btn-danger" name="submit">Checkout</button></form>
+                        <a href="index.php" class="btn">Continue shopping</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ End Total Amount -->
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+      <!--/ End Shopping Cart -->
+          
+      
+      
+      
+<?php include 'footer.php'; ?>
+<!-- Jquery -->
+<script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<!-- Popper JS -->
+	<script src="js/popper.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Color JS -->
+	<script src="js/colors.js"></script>
+	<!-- Slicknav JS -->
+	<script src="js/slicknav.min.js"></script>
+	<!-- Owl Carousel JS -->
+	<script src="js/owl-carousel.js"></script>
+	<!-- Magnific Popup JS -->
+	<script src="js/magnific-popup.js"></script>
+	<!-- Fancybox JS -->
+	<script src="js/facnybox.min.js"></script>
+	<!-- Waypoints JS -->
+	<script src="js/waypoints.min.js"></script>
+	<!-- Countdown JS -->
+	<script src="js/finalcountdown.min.js"></script>
+	<!-- Nice Select JS -->
+	<script src="js/nicesellect.js"></script>
+	<!-- Ytplayer JS -->
+	<script src="js/ytplayer.min.js"></script>
+	<!-- Flex Slider JS -->
+	<script src="js/flex-slider.js"></script>
+	<!-- ScrollUp JS -->
+	<script src="js/scrollup.js"></script>
+	<!-- Onepage Nav JS -->
+	<script src="js/onepage-nav.min.js"></script>
+	<!-- Easing JS -->
+	<script src="js/easing.js"></script>
+	<!-- Active JS -->
+	<script src="js/active.js"></script>
 </body>
-
+</html> 
 </html>

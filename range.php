@@ -17,6 +17,8 @@
         <?php
         include 'config.php';
         include 'funcation.php';
+        include 'navs2.php';
+        
 
         if (isset($_GET['minPrice']) && isset($_GET['maxPrice'])) {
             // Perform the price range filter
@@ -34,6 +36,7 @@
 
         foreach ($products as $product) {
             ?>
+            <br>
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
             <div class="card main" style="width: 18rem;">
                 <img src="<?php echo $product['img_upload']; ?>" class="card-img-top carimg" alt="Product Image">
