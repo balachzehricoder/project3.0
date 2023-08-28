@@ -65,7 +65,7 @@
 <!-- Display the products for the selected category using Bootstrap cards -->
 <div class="span9">
     <div class="well well-small">
-        <h4>Latest Products</h4>
+        <h4>Our Products</h4>
         <ul class="thumbnails product">
             <?php
             $query = "SELECT * FROM products";

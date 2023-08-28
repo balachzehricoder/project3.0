@@ -33,6 +33,7 @@ if (isset($_GET['id'])) {
     $stmt->execute();
     $result = $stmt->get_result();
     $category = $result->fetch_assoc();
+   
 
     // Fetch the products for the selected category from the database
     $products_query = "SELECT * FROM products WHERE category_id = ?";
@@ -118,7 +119,7 @@ if (isset($_GET['id'])) {
     <!-- Display the products for the selected category using Bootstrap cards -->
         <div class="span9">
                     <div class="well well-small">
-                        <h4>Latest Products</h4>
+                    <h4><?php echo $category['name']; ?></h4>
                         <ul class="thumbnails product">
             <?php while ($product = $result->fetch_assoc()) { ?>
                <li>

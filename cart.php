@@ -1,5 +1,6 @@
 <?php
 
+
 session_start();
 
 // if not logged in cant see this page
@@ -8,116 +9,6 @@ if (!isset($_SESSION["user_id"])) {
   exit();
 }
 // include 'navs.php'
-
-?>
-
-
-
-<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://kit.fontawesome.com/20034a5f5a.js" crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="phonesell.com_logo.png">
-<!-- Meta Tag -->
-<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name='copyright' content=''>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Title Tag  -->
-    <title>Eshop - eCommerce HTML5 Template.</title>
-	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="images/favicon.png">
-	<!-- Web Font -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-	
-	<!-- StyleSheet -->
-	
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.min.css">
-	<!-- Font Awesome -->
-    <link rel="stylesheet" href="css/font-awesome.css">
-	<!-- Fancybox -->
-	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
-	<!-- Themify Icons -->
-    <link rel="stylesheet" href="css/themify-icons.css">
-	<!-- Nice Select CSS -->
-    <link rel="stylesheet" href="css/niceselect.css">
-	<!-- Animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-	<!-- Flex Slider CSS -->
-    <link rel="stylesheet" href="css/flex-slider.min.css">
-	<!-- Owl Carousel -->
-    <link rel="stylesheet" href="css/owl-carousel.css">
-	<!-- Slicknav -->
-    <link rel="stylesheet" href="css/slicknav.min.css">
-	
-	<!-- Eshop StyleSheet -->
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-
-
-</head>
-<style>
-  .img {
-    height: 50px;
-  }
-</style>
-
-<body>
-  
-
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
-
-</body>
-
-</html>
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-<style>
-  .empty {
-    color: red;
-    align-items: center;
-    font: 200;
-    font-variant-caps: petite-caps;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-  }
-
-  .img {
-    height: 50px;
-  }
-
-  .cart {
-    border-right: 2px;
-  }
-
-  .total {
-    color: green;
-  }
-</style>
-<?php
 include 'config.php';
 
 
@@ -187,15 +78,7 @@ if (isset($_POST['submit'])) {
     $_SESSION['cart'] = null;
     $_SESSION['cart_details'] = null;
 ?>
-
-    <div class="preloader" id="preloader">
-    <div class="preloader-inner">
-        <div class="preloader-icon">
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</div>
+<!-- mail and invoice work -->
 <?php
     // emails
     include 'Email/email.php';
@@ -213,163 +96,124 @@ if (isset($_POST['submit'])) {
 }
 ob_end_flush(); 
 ?>
-<body class="js">
+<!-- end of mail and invoice work -->
+		<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <meta name="author" content="">
+<!--Less styles -->
+   <!-- Other Less css file //different less files has different color scheam
+	<link rel="stylesheet/less" type="text/css" href="themes/less/simplex.less">
+	<link rel="stylesheet/less" type="text/css" href="themes/less/classified.less">
+	<link rel="stylesheet/less" type="text/css" href="themes/less/amelia.less">  MOVE DOWN TO activate
+	-->
+	<!--<link rel="stylesheet/less" type="text/css" href="themes/less/bootshop.less">
+	<script src="themes/js/less.js" type="text/javascript"></script> -->
 	
-	<!-- Preloader -->
-	<div class="preloader">
-		<div class="preloader-inner">
-			<div class="preloader-icon">
-				<span></span>
-				<span></span>
-			</div>
-		</div>
-	</div>
-	<!-- End Preloader -->
-		
+<!-- Bootstrap style --> 
+    <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
+    <link href="themes/css/base.css" rel="stylesheet" media="screen"/>
+<!-- Bootstrap style responsive -->	
+	<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+	<link href="themes/css/font-awesome.css" rel="stylesheet" type="text/css">
+<!-- Google-code-prettify -->	
+	<link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet"/>
+<!-- fav and touch icons -->
+    <link rel="shortcut icon" href="themes/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="themes/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="themes/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
+	<style type="text/css" id="enject"></style>
+    </head>
+    <style>
+      .empty{
+        color: red;
+	font: 600;
+	font-weight: 500;
+	font-display: initial;
+	font-style: oblique;
+	font-variant: small-caps;
+	text-decoration: dotted;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration-color: red;
+        
+      }
+    </style>
+    <body>
+      
+    </body>
+    </html>
 	
-	<!-- Breadcrumbs -->
-	<div class="breadcrumbs">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="bread-inner">
-						<ul class="bread-list">
-							<li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-							<li class="active"><a href="blog-single.html">Cart</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Breadcrumbs -->
-			
-	<!-- Shopping Cart -->
+			<?php include 'navandside.php' ?>
+      <div class="span9">
 
-					<!-- Shopping Summery -->
-					<table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Product</th>
-                  <th>Description</th>
-                  <th>Quantity/Update</th>
-				  <th>Price</th>
-                  <th>Discount</th>
-                  <th>Tax</th>
-                  <th>Total</th>
-				</tr>
-              </thead>
-              <tbody>
-							<tr>
-
-            <?php foreach ($cart as $product_id => $product) { ?>
-             <tr>
-                  <td> <img width="60" src="<?php $product['image'] ?>" alt=""/></td>
-                  <td><?php $product['name'] ?><br/></td>
-				  <td>
-					<div class="input-append"><input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text"><button class="btn" type="button"><i class="icon-minus"></i></button><button class="btn" type="button"><i class="icon-plus"></i></button><button class="btn btn-danger" type="button"><i class="icon-remove icon-white"></i></button>				</div>
-				  </td>
-                  <td>Rs<?php $product['price'] ?></td>
-                  <td>$25.00</td>
-                  <td>$15.00</td>
-                  <td>$110.00</td>
-                </tr>
-							
-									<!--/ End Input Order -->
-                  <?php } ?>
-
-
-                  <tr>
-								
-                </tbody>
-              </table>
-              <!--/ End Shopping Summery -->
-            </div>
+      <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Description</th>
+      <th>Quantity/Update</th>
+      <th>Price</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($cart as $product_id => $product) { ?>
+<li class="col-2" >
+      <tr>
+        <td> <img width="60" src="<?php echo $product['image']; ?>" alt=""/></td>
+        <td><?php echo $product['name']; ?><br/>Color : black, Material : metal</td>
+        <td>
+          <div class="input-append">
+            <input class="span1" style="max-width:34px" placeholder="<?php echo $product['quantity'] ?>" id="appendedInputButtons" size="16" type="text">
+            <button class="btn" type="button"><i class="icon-minus"></i></button>
+            <button class="btn" type="button"><i class="icon-plus"></i></button>
+            <a href="remove.php?product_id=<?php echo $product_id; ?>" class="btn btn-danger" role="button">
+    <i class="icon-remove icon-white"></i> Remove
+</a>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <!-- Total Amount -->
-              <div class="total-amount">
-                <div class="row">
-                  <div class="col-lg-8 col-md-5 col-12">
-                    <div class="left">
-                      <div class="coupon">
-                        <form action="#" target="_blank">
-                          <input name="Coupon" placeholder="Enter Your Coupon">
-                          <button class="btn">Apply</button>
-                        </form>
-                      </div>
-                    
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-7 col-12">
-                    <div class="right">
-                      <ul>
-                        <li>Cart Subtotal<span>Rp <?php echo number_format($_SESSION['cart_details']['cart_total_price']  ) ; ?></span></li>
-                        <li>Shipping<span>200</span></li>
-                        <li>You Save<span>Rp0.00</span></li>
-                        <li class="last">You Pay<span><?php echo number_format($_SESSION['cart_details']['cart_total_price'] + 200 ) ; ?></span></li>
-                      </ul>
-                      
-                      <div class="button5">
-                      <form id="checkoutForm" action="" method="POST">
+        </td>
+        <td>Rp<?php echo number_format($product['price']); ?></td>
+        
+      </tr>
+      </li>
+
+    <?php } ?>
+    <tr>
+      <td colspan="6" style="text-align:right">Total Price:</td>
+      <td> Rp<?php echo number_format( $_SESSION['cart_details']['cart_total_price']); ?></td>
+    </tr>
+    <tr>
+      <td colspan="6" style="text-align:right">Total Discount:</td>
+      <td> Rp00.00</td>
+    </tr>
+    <tr>
+      <td colspan="6" style="text-align:right">Total Tax:</td>
+      <td> Rp31.00</td>
+    </tr>
+    <tr>
+      <td colspan="6" style="text-align:right"><strong>TOTAL  =</strong></td>
+      <td class="label label-important" style="display:block"> <strong> (Rp<?php  echo number_format($_SESSION['cart_details']['cart_total_price'] ) ; ?>) </strong></td>
+    </tr>
+  </tbody>
+</table>
+        
+<form id="checkoutForm" action="" method="POST">
   <!-- Add an ID to the button -->
-  <button id="checkoutButton" type="submit" class="btn btn-danger" name="submit">Checkout</button></form>
-                        <a href="index.php" class="btn">Continue shopping</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--/ End Total Amount -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--/ End Shopping Cart -->
-          
+  <button id="checkoutButton"type="submit"  class="btn btn-danger" name="submit">Checkout</button></form>
+
+								
+
+                
+                    
+
       
       
-      
-<?php include 'footer.php'; ?>
-<!-- Jquery -->
-<script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.0.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
-	<!-- Popper JS -->
-	<script src="js/popper.min.js"></script>
-	<!-- Bootstrap JS -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Color JS -->
-	<script src="js/colors.js"></script>
-	<!-- Slicknav JS -->
-	<script src="js/slicknav.min.js"></script>
-	<!-- Owl Carousel JS -->
-	<script src="js/owl-carousel.js"></script>
-	<!-- Magnific Popup JS -->
-	<script src="js/magnific-popup.js"></script>
-	<!-- Fancybox JS -->
-	<script src="js/facnybox.min.js"></script>
-	<!-- Waypoints JS -->
-	<script src="js/waypoints.min.js"></script>
-	<!-- Countdown JS -->
-	<script src="js/finalcountdown.min.js"></script>
-	<!-- Nice Select JS -->
-	<script src="js/nicesellect.js"></script>
-	<!-- Ytplayer JS -->
-	<script src="js/ytplayer.min.js"></script>
-	<!-- Flex Slider JS -->
-	<script src="js/flex-slider.js"></script>
-	<!-- ScrollUp JS -->
-	<script src="js/scrollup.js"></script>
-	<!-- Onepage Nav JS -->
-	<script src="js/onepage-nav.min.js"></script>
-	<!-- Easing JS -->
-	<script src="js/easing.js"></script>
-	<!-- Active JS -->
-	<script src="js/active.js"></script>
-</body>
-</html> 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>   $(document).ready(function() {
         // Add event listener to the Checkout button
@@ -387,4 +231,7 @@ ob_end_flush();
     }, 2000); // Replace 2000 with the appropriate delay (in milliseconds)
 </script>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </html>

@@ -3,7 +3,6 @@ session_start();
 
 include 'config.php';
 
-include 'navs.php';
 $id = $_SESSION["user_id"];
 $query = "SELECT * FROM users where id='$id' ";
 $result = $conn->query($query);
@@ -125,7 +124,9 @@ $result = $conn->query($query);
 
 <body class="goto-here">
 
-	<div class="container">
+<center><a href="index.php" class="btn btn-danger small" >return to home</a></center>
+<br><br><br>	
+<div class="container">
 		<div class="invoice-wrap mb-5">
 			<div class="invoice-box">
 				<div class="invoice-header">
