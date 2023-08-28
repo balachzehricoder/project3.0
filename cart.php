@@ -245,51 +245,35 @@ ob_end_flush();
 	<!-- End Breadcrumbs -->
 			
 	<!-- Shopping Cart -->
-	<div class="shopping-cart section">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
+
 					<!-- Shopping Summery -->
-					<table class="table shopping-summery">
-						<thead>
-							<tr class="main-hading">
-								<th>PRODUCT</th>
-								<th>NAME</th>
-								<th class="text-center">UNIT PRICE</th>
-								<th class="text-center">QUANTITY</th>
-								<th class="text-center">TOTAL</th> 
-								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
-							</tr>
-						</thead>
-						<tbody>
+					<table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Description</th>
+                  <th>Quantity/Update</th>
+				  <th>Price</th>
+                  <th>Discount</th>
+                  <th>Tax</th>
+                  <th>Total</th>
+				</tr>
+              </thead>
+              <tbody>
 							<tr>
 
             <?php foreach ($cart as $product_id => $product) { ?>
-              <td class="image" data-title="No"><img src="<?php echo $product['image'] ?>" alt="#"></td>
-								<td class="product-des" data-title="Description">
-									<p class="product-name"><a href="#"><?php echo $product['name'] ?></a></p>
-									
-								</td>
-								<td class="price" data-title="Price"><span>Rp <?php echo number_format($product['price']) ?> </span></td>
-								<td class="qty" data-title="Qty"><!-- Input Order -->
-									<div class="input-group">
-										<div class="button minus">
-											<button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-												<i class="ti-minus"></i>
-											</button>
-										</div>
-										<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="<?php echo $product['quantity'] ?>">
-										<div class="button plus">
-											<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
-												<i class="ti-plus"></i>
-											</button>
-										</div>
-									</div>
-									<!--/ End Input Order -->
-								</td>
-								<td class="total-amount" data-title="Total"><span>Rp <?php echo number_format($product['price']) ?> </span></td>
-								<td class="action" data-title="Remove"><a href="remove.php?product_id=<?php echo $product_id; ?>"><i class="ti-trash remove-icon"></i></a></td>
-							</tr>
+             <tr>
+                  <td> <img width="60" src="<?php $product['image'] ?>" alt=""/></td>
+                  <td><?php $product['name'] ?><br/></td>
+				  <td>
+					<div class="input-append"><input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text"><button class="btn" type="button"><i class="icon-minus"></i></button><button class="btn" type="button"><i class="icon-plus"></i></button><button class="btn btn-danger" type="button"><i class="icon-remove icon-white"></i></button>				</div>
+				  </td>
+                  <td>Rs<?php $product['price'] ?></td>
+                  <td>$25.00</td>
+                  <td>$15.00</td>
+                  <td>$110.00</td>
+                </tr>
 							
 									<!--/ End Input Order -->
                   <?php } ?>

@@ -77,3 +77,4 @@ foreach ($_SESSION['cart'] as $prod_id => $prod) {
 
 // Redirect the user back to the main page.
 header('Location: category.php');
+?>

@@ -1,31 +1,45 @@
-<?php
-        include 'navs1.php';
-        ?>
+<?php  
+session_start();
+include 'config.php';
 
 
-<br>
 
 
-<style>
-    .edit{
-        color: red;
-    align-items: center;
-    font: 200;
-    font-variant-caps: petite-caps;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    }
-</style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<!-- Display the products -->
-<div class="container">
-    <div class="row">
-        <?php
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    	
+<!-- Bootstrap style --> 
+<link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
+    <link href="themes/css/base.css" rel="stylesheet" media="screen"/>
+<!-- Bootstrap style responsive -->	
+	<link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+	<link href="themes/css/font-awesome.css" rel="stylesheet" type="text/css">
+<!-- Google-code-prettify -->	
+	<link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet"/>
+<!-- fav and touch icons -->
+    <link rel="shortcut icon" href="themes/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="themes/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="themes/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
+	<style type="text/css" id="enject"></style>
+  </head>
+
+<?php include 'navandside.php' ?>
+
+
+  <div class="span9">
+                    <div class="well well-small">
+                        <h4>Latest Products</h4>
+                        <ul class="thumbnails product"> <?php
         include 'config.php';
-        include 'funcation.php';
 
         // Check if the search query is set and not empty
         if (isset($_GET['q']) && !empty($_GET['q'])) {
@@ -40,24 +54,61 @@
         } else {
             // Fetch all products
         }
-
-        foreach ($products as $product) {
-            // Display product details (you can use Bootstrap cards or any other format here)
         ?>
-            <a href="full_page.php?id=<?php echo $product['id']; ?>">
-                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                    <div class="card main" style="width: 18rem;">
-                        <img src="<?php echo $product['img_upload']; ?>" class="card-img-top carimg" alt="Product Image">
-                        <div class="card-body">
-                            <p class="card-title text">Name: <?php echo $product['p_name']; ?></p>
-                            <p class="card-text text">Price: <?php echo $product['p_price']; ?> Rp</p>
-                            <a href="add-to-cart.php?id=<?php echo $product['id']; ?>" class="btn btn-danger">Add to Cart</a>
-                        </div>
+  <div class="span9">
+        <div class="well well-small">
+            <h4></h4>
+            <ul class="thumbnails product">
+                <?php
+        foreach ($products as $product) {
+?>
+
+
+            <li class="col-2">
+			 <div class="thumbnail product">
+                                            <a href="product_details.html"><img class="img"  src="<?php echo $product["img_upload"]; ?>" alt=""/></a>
+                                            <div class="caption">
+                                                <h5><?php echo $product["p_name"]; ?></h5>
+                                                <h4 style="text-align:center">
+                                                    <a class="btn" href="product_details.html"> <i class="icon-heart"></i></a>
+                                                    <a class="btn" href="add-to-cart.php?id=<?php echo $row['id']; ?>">Add to <i class="icon-shopping-cart"></i></a>
+                                                    <a class="btn btn-primary" href="#">Rs <?php echo $product["p_price"]; ?></a>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                            <?php
+                                }
+                            
+                            ?>
+                        </ul>
                     </div>
                 </div>
-            </a>
-        <?php
-        }
-        ?>
+            </div>
+        </div>
     </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

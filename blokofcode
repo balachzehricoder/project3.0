@@ -1,0 +1,24 @@
+              
+<?php
+        if (isset($_GET['minPrice']) && isset($_GET['maxPrice'])) {
+            // Perform the price range filter
+            $minPrice = $_GET['minPrice'];
+            $maxPrice = $_GET['maxPrice'];
+            $products = getProductsByPriceRange($minPrice, $maxPrice);
+        } else {
+            // Fetch all products
+            // $products = getAllProducts();
+        }
+
+        if (empty($products)) {
+            echo '<center><div class="col-12 edit"><h1 class="text-danger">No products found in your price range </h1></div></center>';
+        }
+
+        include 'navandside.php';
+?>
+        <div class="span9">
+        <div class="well well-small">
+            <h4>Latest Products</h4>
+            <ul class="thumbnails product">
+                <?php
+        foreach ($products as $product) {
