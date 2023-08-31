@@ -31,7 +31,11 @@ include 'config.php';
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
 	<style type="text/css" id="enject"></style>
   </head>
-
+<style>
+    .img{
+        height: 100px;
+    }
+</style>
 <?php include 'navandside.php' ?>
 
 
@@ -69,10 +73,11 @@ include 'config.php';
                                             <a href="product_details.html"><img class="img"  src="<?php echo $product["img_upload"]; ?>" alt=""/></a>
                                             <div class="caption">
                                                 <h5><?php echo $product["p_name"]; ?></h5>
+                                                <h5>Rs <?php echo $product["p_price"]; ?></h5>
                                                 <h4 style="text-align:center">
                                                     <a class="btn" href="product_details.html"> <i class="icon-heart"></i></a>
                                                     <a class="btn" href="add-to-cart.php?id=<?php echo $row['id']; ?>">Add to <i class="icon-shopping-cart"></i></a>
-                                                    <a class="btn btn-primary" href="#">Rs <?php echo $product["p_price"]; ?></a>
+                                                    
                                                 </h4>
                                             </div>
                                         </div>

@@ -1,41 +1,25 @@
 <?php  include 'config.php';   include 'funcation.php'; ?>
+<link rel="shortcut icon" href="logo.png">
 <div id="header">
 <div class="container">
 <div id="welcomeLine" class="row">
-	<div class="span6">Welcome!<strong> </strong></div>
+	<div class="span6"><strong> </strong></div>
 	<div class="span6">
 	<div class="pull-right">
-		<a href="product_summary.html"><span class="">Fr</span></a>
-		<a href="product_summary.html"><span class="">Es</span></a>
+		<a href="profile.php"><span class="btn btn-mini btn-primary" data-bs-toggle="tooltip" title="user managment"><i class="icon-user icon-white"></i> 
 		<a href="wishlist.php"><span class="btn btn-mini btn-primary" data-bs-toggle="tooltip" title="wishlist"><i class="icon-heart icon-white"></i> <?php
-					//   $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
-					//   echo $cart_count;
-				  
+// Check if the wishlist cookie is set.
+if (isset($_COOKIE['wishlist'])) {
+    $wishlist = unserialize($_COOKIE['wishlist']);
+    $wishlist_count = count($wishlist);
+} else {
+    $wishlist_count = 0;
+}
 
-					if(isset($_SESSION['wish_details']['wish_total_qty']))
-					{
-						print_r($_SESSION['wish_details']['wish_total_qty']);
-					}
-					else
-					{
-						print_r(0);
-					}
-					?>
-				   
-				  </i>     </a>
-                  </li>
-				  <?php 
-				  if (!isset($_SESSION["user_id"])) {
+// Output the wishlist count.
+echo $wishlist_count;
+?>
 
-					exit();
-				  }
-				  
-
-				  
-		  
-				 
-				 ?>   
-		
 		<a href="cart.php"><span class="btn btn-mini btn-primary" data-bs-toggle="tooltip" title="cart"><i class="icon-shopping-cart icon-white"></i>  <?php
 					//   $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 					//   echo $cart_count;
@@ -76,7 +60,7 @@
 </a>
 
   <div class="navbar-inner">
-    <a class="brand" href="index.php"><img style="height: 50px;" src="phonesell.com_logo.png" alt="Bootsshop"/></a>
+    <a class="brand" href="index.php"><img style="height: 50px;" src="logo.png" alt="Bootsshop"/></a>
     <form class="form-inline navbar-search" method="get" action="search.php">
         <input type="text"  class="srchTxt" name="q" placeholder="Search products">
        <a href="search.php"> <input type="submit" value="Search"> ></li></a>
@@ -86,7 +70,7 @@
 	 <li class=""><a href="normal.html">Delivery</a></li>
 	 <li class=""><a href="contact.html">Contact</a></li>
 	 <li class="">
-	 <a href="logout.php" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-danger">Logout</span></a>
+	 <a href="logout.php"  style="padding-right:0"><span class="btn btn-large btn-danger">Logout</span></a>
 	<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
 		  <div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>

@@ -11,7 +11,6 @@
 <!-- Google-code-prettify -->	
 	<link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet"/>
 <!-- fav and touch icons -->
-    <link rel="shortcut icon" href="themes/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="themes/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="themes/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
@@ -54,8 +53,9 @@
 		height: 100px;
         
     }
-	.product{
-	}
+	
+
+   
   </style>
   
 <?php include 'navandside.php'; ?>
@@ -86,10 +86,10 @@
                             <a href="product_details.html"><img class="img" src="<?php echo $img_upload; ?>" alt=""/></a>
                             <div class="caption">
                                 <h5><?php echo $escaped_p_name; ?></h5>
+                                <h5>  Rs <?php echo $p_price; ?></h5>
                                 <h4 style="text-align:center">
                                     <a class="btn" href="wishlist.php?id=<?php echo $product_id; ?>"><i class="icon-heart"></i></a>
-                                    <a class="btn" href="add-to-cart.php?id=<?php echo $product_id; ?>">Add to <i class="icon-shopping-cart"></i></a>
-                                    <a class="btn btn-primary" href="#">Rs <?php echo $p_price; ?></a>
+                                    <a class="btn  " href="add-to-cart.php?id=<?php echo $product_id; ?>">Add to <i class="icon-shopping-cart"></i></a>
                                 </h4>
                             </div>
                         </div>
