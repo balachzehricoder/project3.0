@@ -1,7 +1,6 @@
 <?php
 // category.php
 
-session_start();
 
 
 // Check if the category ID parameter is set in the URL

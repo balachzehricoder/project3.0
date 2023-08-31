@@ -1,8 +1,10 @@
-<?php include 'config.php'; session_start(); ?>
+<?php include 'config.php'; session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
     
 <!-- Bootstrap style --> 
+<link rel="icon" href="logo.png">
+
 <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="themes/css/base.css" rel="stylesheet" media="screen"/>
 <!-- Bootstrap style responsive -->	
@@ -39,6 +41,7 @@
 	<link href="themes/css/font-awesome.css" rel="stylesheet" type="text/css">
 <!-- Google-code-prettify -->	
 	<link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet"/>
+
 <!-- fav and touch icons -->
     <link rel="shortcut icon" href="themes/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="themes/images/ico/apple-touch-icon-144-precomposed.png">

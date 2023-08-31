@@ -1,4 +1,55 @@
-<?php  include 'config.php';   include 'funcation.php'; ?>
+<?php  include 'config.php';   include 'funcation.php'; session_start();
+
+
+//funcation of wishlist count
+
+
+
+include 'config.php';
+$id = $_SESSION["user_id"];
+$query = "SELECT * FROM users where id='$id'";
+$result = $conn->query($query);
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $full_name = $row['full_name'];
+        $email = $row['email'];
+        $phone = $row['phone'];
+        $address = $row['address'];
+    }
+}
+
+
+function getWishlistItemCountForUser($user_id) {
+    include 'config.php';
+    
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Query to get wishlist item count for a specific user
+    $sql = "SELECT COUNT(*) AS wishlist_count FROM wishlist WHERE user_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $wishlistCount = $row["wishlist_count"];
+    } else {
+        $wishlistCount = 0;
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    return $wishlistCount;
+
+
+}
+
+
+?>
 <link rel="shortcut icon" href="logo.png">
 <div id="header">
 <div class="container">
@@ -8,17 +59,18 @@
 	<div class="pull-right">
 		<a href="profile.php"><span class="btn btn-mini btn-primary" data-bs-toggle="tooltip" title="user managment"><i class="icon-user icon-white"></i> 
 		<a href="wishlist.php"><span class="btn btn-mini btn-primary" data-bs-toggle="tooltip" title="wishlist"><i class="icon-heart icon-white"></i> <?php
-// Check if the wishlist cookie is set.
-if (isset($_COOKIE['wishlist'])) {
-    $wishlist = unserialize($_COOKIE['wishlist']);
-    $wishlist_count = count($wishlist);
-} else {
-    $wishlist_count = 0;
-}
 
-// Output the wishlist count.
-echo $wishlist_count;
+
+// Replace '123' with the actual user ID
+
+$user_id = $id;
+
+$wishlistCount = getWishlistItemCountForUser($user_id);
+
+echo $wishlistCount ;
 ?>
+
+
 
 		<a href="cart.php"><span class="btn btn-mini btn-primary" data-bs-toggle="tooltip" title="cart"><i class="icon-shopping-cart icon-white"></i>  <?php
 					//   $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
