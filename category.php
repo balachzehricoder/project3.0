@@ -123,7 +123,7 @@ if (isset($_GET['id'])) {
             <?php while ($product = $result->fetch_assoc()) { ?>
                <li>
                 <div class="thumbnail product">
-                                            <a href="product_details.html"><img class="img"  src="<?php echo $product["img_upload"] ?>" alt=""/></a>
+                                            <a href="full_page.php?id=<?php echo $product_id; ?>"><img class="img"  src="<?php echo $product["img_upload"] ?>" alt=""/></a>
                                             <div class="caption">
                                                 <h5><?php echo $product["p_name"] ?></h5>
                                                 <h5>Rs <?php echo $product["p_price"]; ?></h5>
