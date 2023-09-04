@@ -1,13 +1,14 @@
 <?php
+// Get an array of all cookies sent by the client
+$allCookies = $_COOKIE;
 
-session_start();
-session_unset();
-session_destroy();
+// Loop through each cookie and clear it
+foreach ($allCookies as $cookieName => $cookieValue) {
+    // Clear the cookie by setting its expiration time to the past
+    setcookie($cookieName, "", time() - 3600, "/");
+}
 
-
-
+// Redirect to the login page or another desired page
 header("Location: login.php");
-
-echo "<script> alert 'you have been logged out'</script> "; 
-
+exit();
 ?>

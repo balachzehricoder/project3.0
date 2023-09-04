@@ -1,10 +1,24 @@
 <?php
-
 session_start();
-
 include 'config.php';
 
 if (isset($_SESSION["user_id"])) {
+  header("Location: index.php");
+  exit();
+}
+
+// Function to set user cookies with a longer expiration time
+function setUserCookies($user_id, $user_name, $role) {
+  setcookie("user_id", $user_id, time() + 3600 * 24 * 30, "/"); // Set to expire in 30 days (adjust as needed)
+  setcookie("user_name", $user_name, time() + 3600 * 24 * 30, "/");
+  setcookie("role", $role, time() + 3600 * 24 * 30, "/");
+}
+
+if (isset($_COOKIE["user_id"])) {
+  // If user cookies exist, restore the session and log the user in automatically
+  $_SESSION["user_id"] = $_COOKIE["user_id"];
+  $_SESSION["user_name"] = $_COOKIE["user_name"];
+  $_SESSION["role"] = $_COOKIE["role"];
   header("Location: index.php");
   exit();
 }
@@ -13,9 +27,7 @@ if (isset($_POST["signup"])) {
   $full_name = mysqli_real_escape_string($conn, $_POST["signup_full_name"]);
   $email = mysqli_real_escape_string($conn, $_POST["signup_email"]);
   $phone = mysqli_real_escape_string($conn, $_POST["signup_phone"]);
-
   $address = mysqli_real_escape_string($conn, $_POST["signup_address"]);
-
   $password = mysqli_real_escape_string($conn, $_POST["signup_password"]);
   $cpassword = mysqli_real_escape_string($conn, $_POST["signup_cpassword"]);
 
@@ -37,8 +49,11 @@ if (isset($_POST["signup"])) {
         $_POST["signup_email"] = "";
         $_POST["signup_password"] = "";
         $_POST["signup_address"] = "";
-
         $_POST["signup_cpassword"] = "";
+
+        // Set user cookies upon successful registration
+        setUserCookies($_SESSION["user_id"], $_SESSION["user_name"], $_SESSION["role"]);
+
         echo "<script>alert('User registration successful');</script>";
       } else {
         echo "<script>alert('User registration failed');</script>";
@@ -51,9 +66,7 @@ if (isset($_POST["signin"])) {
   $email = mysqli_real_escape_string($conn, $_POST["email"]);
   $password = mysqli_real_escape_string($conn, $_POST["password"]);
 
-  $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Use password_hash() for secure password hashing
-
-  $check_email = mysqli_query($conn, "SELECT id, password FROM users WHERE email = '$email'");
+  $check_email = mysqli_query($conn, "SELECT id, password, full_name, role FROM users WHERE email = '$email'");
   if (mysqli_num_rows($check_email) > 0) {
     $row = mysqli_fetch_assoc($check_email);
     $stored_password = $row['password'];
@@ -61,6 +74,10 @@ if (isset($_POST["signin"])) {
       $_SESSION["user_id"] = $row['id'];
       $_SESSION["user_name"] = $row['full_name'];
       $_SESSION["role"] = $row['role'];
+
+      // Set user cookies upon successful login
+      setUserCookies($_SESSION["user_id"], $_SESSION["user_name"], $_SESSION["role"]);
+
       header("Location: index.php");
       exit();
     } else {
@@ -70,7 +87,6 @@ if (isset($_POST["signin"])) {
     echo "<script>alert('Login details are incorrect. Please try again.');</script>";
   }
 }
-
 ?>
 
 <style>

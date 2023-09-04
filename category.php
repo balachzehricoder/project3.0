@@ -1,6 +1,7 @@
 <?php
 // category.php
 
+error_reporting(E_ALL);
 
 
 // Check if the category ID parameter is set in the URL
@@ -105,8 +106,7 @@ if (isset($_GET['id'])) {
 		height: 100px;
         
     }
-	.product{
-	}
+	
   </style>
 <body>
 <!-- Sidebar end=============================================== -->

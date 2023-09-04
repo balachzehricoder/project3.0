@@ -8,15 +8,6 @@
 include 'config.php';
 $id = $_SESSION["user_id"];
 $query = "SELECT * FROM users where id='$id'";
-$result = $conn->query($query);
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $full_name = $row['full_name'];
-        $email = $row['email'];
-        $phone = $row['phone'];
-        $address = $row['address'];
-    }
-}
 
 
 function getWishlistItemCountForUser($user_id) {
@@ -50,7 +41,7 @@ function getWishlistItemCountForUser($user_id) {
 
 
 ?>
-<link rel="shortcut icon" href="logo.png">
+<link rel="shortcut icon" data-bs-toggle="tooltip" title="Home" href="logo.png">
 <div id="header">
 <div class="container">
 <div id="welcomeLine" class="row">
@@ -58,7 +49,7 @@ function getWishlistItemCountForUser($user_id) {
 	<div class="span6">
 	<div class="pull-right">
 		<a href="profile.php"><span class="btn btn-mini btn-primary" data-bs-toggle="tooltip" title="user managment"><i class="icon-user icon-white"></i> 
-		<a href="wishlist.php"><span class="btn btn-mini btn-primary" data-bs-toggle="tooltip" title="wishlist"><i class="icon-heart icon-white"></i> <?php
+		<a href="wishlistview.php"><span class="btn btn-mini btn-primary" data-bs-toggle="tooltip" title="wishlist"><i class="icon-heart icon-white"></i> <?php
 
 
 // Replace '123' with the actual user ID
@@ -115,14 +106,14 @@ echo $wishlistCount ;
     <a class="brand" href="index.php"><img style="height: 50px;" src="logo.png" alt="Bootsshop"/></a>
     <form class="form-inline navbar-search" method="get" action="search.php">
         <input type="text"  class="srchTxt" name="q" placeholder="Search products">
-       <a href="search.php"> <input type="submit" value="Search"> ></li></a>
+       <a href="search.php"><input type="submit" data-bs-toggle="tooltip" title="Search product"  value="search"></li></a>
     </form>
     <ul id="topMenu" class="nav pull-right">
 	 <li class=""><a href="special_offer.html">Specials Offer</a></li>
 	 <li class=""><a href="normal.html">Delivery</a></li>
 	 <li class=""><a href="contact.html">Contact</a></li>
 	 <li class="">
-	 <a href="logout.php"  style="padding-right:0"><span class="btn btn-large btn-danger">Logout</span></a>
+	 <a href="logout.php"  style="padding-right:0"><span class="btn btn-large btn-danger" data-bs-toggle="tooltip" title="Logout">Logout</span></a>
 	<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
 		  <div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
