@@ -1,6 +1,6 @@
 <?php include 'config.php';
 include 'navandside.php';
-
+// the api key
 
 ?>
 <!DOCTYPE html>
@@ -144,19 +144,7 @@ if($result->num_rows > 0){
 				
 				<hr class="soft"/>
 				<h4>100 items in stock</h4>
-				<form class="form-horizontal qtyFrm pull-right">
-				  <div class="control-group">
-					<label class="control-label"><span>Color</span></label>
-					<div class="controls">
-					  <select class="span2">
-						  <option>Black</option>
-						  <option>Red</option>
-						  <option>Blue</option>
-						  <option>Brown</option>
-						</select>
-					</div>
-				  </div>
-				</form>
+				
 				<hr class="soft clr"/>
 				<p>
 				14 Megapixels. 18.0 x Optical Zoom. 3.0-inch LCD Screen. Full HD photos and 1280 x 720p HD movie capture. ISO sensitivity ISO6400 at reduced resolution. 
@@ -169,7 +157,8 @@ if($result->num_rows > 0){
 			<a href="#" name="detail"></a>
 			<hr class="soft"/>
 			</div>
-			
+			<?php }} ?>
+
 			<div class="span9">
             <ul id="productDetail" class="nav nav-tabs">
               <li class="active"><a href="#home" data-toggle="tab">Product Details</a></li>
@@ -177,18 +166,8 @@ if($result->num_rows > 0){
             </ul>
             <div id="myTabContent" class="tab-content">
               <div class="tab-pane fade active in" id="home">
-			  <h4>Product Information</h4>
-                <table class="table table-bordered">
-				<tbody>
-				<tr class="techSpecRow"><th colspan="2">Product Details</th></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Brand: </td><td class="techSpecTD2">Fujifilm</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Model:</td><td class="techSpecTD2">FinePix S2950HD</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Released on:</td><td class="techSpecTD2"> 2011-01-28</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Dimensions:</td><td class="techSpecTD2"> 5.50" h x 5.50" w x 2.00" l, .75 pounds</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Display size:</td><td class="techSpecTD2">3</td></tr>
-				</tbody>
-				</table>
-				<?php }} ?>
+			  
+				
 				
               </div>
 		<div class="tab-pane fade" id="profile">
