@@ -145,6 +145,8 @@ $result = $conn->query($query);
 							<p class="mb-3">Address: <strong><?php echo $address ?></strong></p>
 							<p class="mb-3">Email: <strong><?php echo $email ?></strong></p>
 							<p class="mb-3">Phone: <strong><?php echo $phone ?></strong></p>
+							<p class="mb-3">payment: <strong>COD</strong></p>
+
 						</div>
 					</div>
 				</div>

@@ -90,41 +90,62 @@
   <header>
     <!-- Your header content goes here -->
   </header>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Your Website Name</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+</head>
+<body>
+    <header>
+        <h1>Privacy Policy</h1>
+    </header>
+    
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Welcome to Your Website Name's Privacy Policy. Your privacy is important to us, and we are committed to protecting your personal information.</p>
+    </section>
 
-  <!-- Main content section -->
-  <section id="about-us">
-    <div class="container">
-      <h1>About Us</h1>
-      <p>Welcome to PhoneSell.com, your trusted destination for all things related to smartphones. Our mission is to provide you with the latest information, reviews, and deals on a wide range of mobile devices.</p>
+    <section id="information-collection">
+        <h2>Information We Collect</h2>
+        <p>We may collect various types of information, including but not limited to:</p>
+        <ul>
+            <li>Your name, email address, and contact information when you voluntarily provide it.</li>
+            <li>Information about your usage of our website through cookies and similar tracking technologies.</li>
+            <li>Other information you provide when you interact with our services, such as filling out forms or surveys.</li>
+        </ul>
+    </section>
 
-      <h2>Our Story</h2>
-      <p>PhoneSell.com was founded in 2023 with a passion for technology and a desire to help people make informed decisions when purchasing smartphones. Our team of experts is dedicated to researching and analyzing the latest trends in the mobile industry to bring you the most relevant and up-to-date information.</p>
+    <section id="use-of-information">
+        <h2>How We Use Your Information</h2>
+        <p>We may use the information we collect for various purposes, including:</p>
+        <ul>
+            <li>Providing and improving our services.</li>
+            <li>Communicating with you, including responding to inquiries and sending updates.</li>
+            <li>Customizing content and advertisements.</li>
+            <li>Complying with legal obligations.</li>
+        </ul>
+    </section>
 
-      <h2>What We Offer</h2>
-      <p>At PhoneSell.om, we offer:</p>
-      <ul>
-        <li>Comprehensive smartphone reviews</li>
-        <li>Expert buying guides</li>
-        <li>Comparison tools to help you find the perfect phone</li>
-        <li>The latest news and updates in the mobile industry</li>
-        <li>Exclusive deals and discounts</li>
-      </ul>
+    <section id="data-security">
+        <h2>Data Security</h2>
+        <p>We take appropriate measures to protect your personal information from unauthorized access and disclosure. However, no data transmission over the internet can be guaranteed as completely secure.</p>
+    </section>
 
-      <h2>Contact Us</h2>
-      <p>If you have any questions, feedback, or suggestions, please don't hesitate to contact us. We value your input and strive to provide the best possible experience for our visitors.</p>
-      <p>You can reach us via:</p>
-      <ul>
-        <li>Email: phonesell7896.com</li>
-        <li>Phone: [03313345084]</li>
-        <li>Address: gulshan-e-iqbal block 17 shop #33</li>
-      </ul>
-    </div>
-  </section>
+    <section id="third-party-links">
+        <h2>Third-Party Links</h2>
+        <p>Our website may contain links to third-party websites or services. We are not responsible for the privacy practices or content of these third-party sites. We encourage you to read their privacy policies.</p>
+    </section>
 
-  <!-- Add your footer section here -->
-  <footer>
-    <!-- Your footer content goes here -->
-  </footer>
+    <section id="policy-updates">
+        <h2>Policy Updates</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the revised date will be indicated at the top of the page.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+    </footer>
 </body>
-
 </html>

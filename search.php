@@ -69,13 +69,13 @@ include 'config.php';
 
             <li class="col-2">
 			 <div class="thumbnail product">
-                                            <a href="full_page.php?id=<?php echo $product_id; ?>"><img class="img"  src="<?php echo $product["img_upload"]; ?>" alt=""/></a>
+                                            <a href="full_page.php?id=<?php echo $product ['id']; ?>"><img class="img"  src="<?php echo $product["img_upload"]; ?>" alt=""/></a>
                                             <div class="caption">
                                                 <h5><?php echo $product["p_name"]; ?></h5>
                                                 <h5>Rs <?php echo $product["p_price"]; ?></h5>
                                                 <h4 style="text-align:center">
-                                                    <a class="btn" href="product_details.html"> <i class="icon-heart"></i></a>
-                                                    <a class="btn" href="add-to-cart.php?id=<?php echo $row['id']; ?>">Add to <i class="icon-shopping-cart"></i></a>
+                                                    <a class="btn" href="wishlist.php?id=<?php echo['id']; ?>"> <i class="icon-heart"></i></a>
+                                                    <a class="btn" href="add-to-cart.php?id=<?php echo$product ['id']; ?>">Add to <i class="icon-shopping-cart"></i></a>
                                                     
                                                 </h4>
                                             </div>

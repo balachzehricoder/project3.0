@@ -1,4 +1,5 @@
 <?php
+include 'adminnav.php';
 include 'config.php';
 
 $id = "";

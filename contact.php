@@ -1,8 +1,14 @@
-<?php include 'config.php';  ?>
 <!DOCTYPE html>
 <html lang="en">
-    
-<!-- Bootstrap style --> 
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - PhoneSell.com</title>
+  <!-- Add your CSS stylesheets and JavaScript files here -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+  <!-- Bootstrap style --> 
 <link rel="icon" href="logo.png">
 
 <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
@@ -49,66 +55,86 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
 	<style type="text/css" id="enject"></style>
-  </head>
-  <style>
-    .img{
+</head>
+<?php include 'navandside.php'
+ ?>
 
-		height: 100px;
-        
-    }
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/20034a5f5a.js" crossorigin="anonymous"></script>
 	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="phonesell.com_logo.png">
 
-   
-  </style>
-  
-<?php include 'navandside.php'; ?>
 
-<!-- Include the navbar from navs2.php -->
+	</head>
 
-<!-- Display the products for the selected category using Bootstrap cards -->
-<div class="span9">
-    <div class="well well-small">
-        <h4>Our Products</h4>
-        <ul class="thumbnails product">
-            <?php
-            $query = "SELECT * FROM products";
-            $result = $conn->query($query);
+	<body>
 
-            if ($result->num_rows > 0) {
-                foreach ($result as $row) {
-                    $p_name = $row['p_name'];
-                    $p_price = number_format($row['p_price']); // Format the price
-                    $img_upload = $row['img_upload'];
-                    $product_id = $row['id']; // Assuming the ID field is named 'id'
 
-                    // Escape output for security
-                    $escaped_p_name = htmlspecialchars($p_name, ENT_QUOTES, 'UTF-8');
-            ?>
-                    <li class="col-2">
-                        <div class="thumbnail product">
-                            <a href="full_page.php?id=<?php echo $product_id; ?>"><img class="img" src="<?php echo $img_upload; ?>" alt=""/></a>
-                            <div class="caption">
-                                <h5><?php echo $escaped_p_name; ?></h5>
-                                <h5>  Rs  <?php echo $p_price; ?></h5>
-                                <h4 style="text-align:center">
-                                    <a class="btn" href="wishlist.php?id=<?php echo $product_id; ?>"><i class="icon-heart"></i></a>
-                                    <a class="btn  " href="add-to-cart.php?id=<?php echo $product_id; ?>">Add to <i class="icon-shopping-cart"></i></a>
-                                </h4>
-                            </div>
-                        </div>
-                    </li>
-            <?php
-                }
-            }
-            ?>
-        </ul>
-    </div>
-</div>
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
+	</body>
 </html>
+
+  <header>
+    <!-- Your header content goes here -->
+  </header>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Your Website Name</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+</head>
 <body>
+    <header>
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you!</p>
+    </header>
+    
+    <section id="contact-form">
+        <h2>Send Us a Message</h2>
+        <form action="contact_process.php" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="contact-info">
+        <h2>Contact Information</h2>
+        <p>If you prefer other means of communication, you can reach us through the following:</p>
+        <ul>
+            <li>Email: <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a></li>
+            <li>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></li>
+            <li>Address: 123 Main Street, City, Country</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

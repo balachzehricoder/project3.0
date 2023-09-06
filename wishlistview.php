@@ -1,6 +1,10 @@
 <?php
  include 'navandside.php' ;
 
+
+
+
+
 function getWishlistItemsForUserview($user_id) {
     include 'config.php';
     
@@ -107,8 +111,19 @@ $wishlistItems = getWishlistItemsForUserview($user_id);
                 <td><?php echo $item['p_name']; ?><br/>Color : black, Material : metal</td>
                 <td>Rp<?php echo number_format($item['p_price']); ?></td>
                 <td>
-                    <a href="remove.php?product_id=<?php echo $item['id']; ?>" class="btn btn-danger" role="button">
+                    <a href="delete-wishlist-item.php?id=<?php echo $item['wishlist_id']; ?>" class="btn btn-danger" role="button">
                         <i class="icon-remove icon-white"></i> Remove
+
+
+                        
+
+                    </a>
+
+
+                    <a href="add-to-cart.php?id=<?php echo $item['wishlist_id']; ?>" class="btn btn-sucess" role="button">
+                        <i class="icon-cart icon-white"></i> add to cart
+
+                        
                         
 
                     </a>

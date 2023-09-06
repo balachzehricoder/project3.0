@@ -12,7 +12,7 @@
 
 <body>
 
-
+<?php include 'adminnav.php' ?>
 <br><br><br>
         <h2>List of users</h2>
         <br>

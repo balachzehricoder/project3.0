@@ -230,7 +230,7 @@ if($result->num_rows > 0){
 						<input type="checkbox">  Adds product to compair
 						</label><br/>
 						<div class="btn-group">
-						<a href="product_details.html" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
+						<a href="add-to-cart.php?id=<?php echo $row['id']; ?>" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
 						<a href="product_details.html" class="btn btn-large"><i class="icon-zoom-in"></i></a>
 						</div>
 					</form>
@@ -315,11 +315,11 @@ if($result->num_rows > 0){
 						<form class="form-horizontal qtyFrm">
 						<h3> $222.00</h3>
 						<label class="checkbox">
-						<input type="checkbox">  Adds product to compair
+						<input type="checkbox"> 
 						</label><br/>
 						<div class="btn-group">
-						<a href="product_details.html" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-						<a href="product_details.html" class="btn btn-large"><i class="icon-zoom-in"></i></a>
+						<a href="add-to-cart.php?id=<?php echo $product ['id']; ?>" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
+						<a href="" class="btn btn-large"><i class="icon-zoom-in"></i></a>
 						</div>
 						</form>
 					</div>

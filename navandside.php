@@ -109,9 +109,9 @@ echo $wishlistCount ;
        <a href="search.php"><input type="submit" data-bs-toggle="tooltip" title="Search product"  value="search"></li></a>
     </form>
     <ul id="topMenu" class="nav pull-right">
-	 <li class=""><a href="special_offer.html">Specials Offer</a></li>
-	 <li class=""><a href="normal.html">Delivery</a></li>
-	 <li class=""><a href="contact.html">Contact</a></li>
+	 <li class=""><a href="privecypolicy.php">privercy policy</a></li>
+	 <li class=""><a href="aboutus.php">about us</a></li>
+	 <li class=""><a href="contact.php">Contact</a></li>
 	 <li class="">
 	 <a href="logout.php"  style="padding-right:0"><span class="btn btn-large btn-danger" data-bs-toggle="tooltip" title="Logout">Logout</span></a>
 	<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
@@ -150,7 +150,7 @@ echo $wishlistCount ;
 	<div class="row">
 <!-- Sidebar ================================================== -->
 	<div id="sidebar" class="span3">
-		<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="themes/images/ico-cart.png" alt="cart"><?php
+		<div class="well well-small"><a id="myCart" href="cart.php"><img src="themes/images/ico-cart.png" alt="cart"><?php
 					//   $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 					//   echo $cart_count;
 				  
