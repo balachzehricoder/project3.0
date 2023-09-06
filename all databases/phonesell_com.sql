@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2023 at 10:31 AM
+-- Generation Time: Sep 07, 2023 at 12:23 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`ADMINid`, `ADMIN_NAME`, `ADMIN_EMAILID`, `ADMIN_PASSWORD`) VALUES
-(1, 'admin', 'admin@gmail.com', 'admin123');
+(1, 'admin', 'admin@gmail.com', 'admin12345');
 
 -- --------------------------------------------------------
 
@@ -62,7 +62,7 @@ INSERT INTO `categories` (`id`, `name`, `picture`, `description`) VALUES
 (6, 'Realme', 'uploads/R.png', 'Realme is a very good brand'),
 (7, 'Samsung', 'uploads/OIP (3).jpeg', 'Samsung is a very good company '),
 (8, 'Apple', 'uploads/download.jpeg', 'apple is a good comany'),
-(9, 'Accessioes', 'uploads/OIP.jpeg', 'a phone charger and may types of headphones and data cable');
+(9, 'Accessories', 'uploads/OIP.jpeg', 'a phone charger and may types of headphones and data cable');
 
 -- --------------------------------------------------------
 
@@ -84,45 +84,22 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `total`, `delivery_charges`, `order_date_time`, `status`) VALUES
-(163, 10, 100000, 200, '2023-07-22 12:44:23', 'delivered'),
-(164, 10, 20000, 200, '2023-07-22 12:47:02', 'delivered'),
-(165, 10, 1020050, 200, '2023-07-23 08:10:36', 'delivered'),
-(166, 10, 630120, 200, '2023-07-23 11:25:50', 'delivered'),
-(167, 12, 90000, 200, '2023-07-24 06:28:16', 'delivered'),
-(168, 12, 56000, 200, '2023-07-24 06:28:43', 'delivered'),
-(169, 12, 58243040, 200, '2023-07-24 06:33:37', 'delivered'),
-(170, 12, 4000170, 200, '2023-07-24 06:38:41', 'delivered'),
-(171, 12, 68000, 200, '2023-07-24 06:41:04', 'delivered'),
-(172, 10, 100000, 200, '2023-07-24 07:05:49', 'delivered'),
-(173, 10, 1000050, 200, '2023-07-24 07:12:07', 'delivered'),
-(174, 10, 1100040, 200, '2023-07-24 08:43:50', 'delivered'),
-(175, 10, 1000050, 200, '2023-07-24 08:46:22', 'delivered'),
-(176, 10, 290080, 200, '2023-07-24 08:53:47', 'delivered'),
-(177, 10, 1000050, 200, '2023-07-24 08:55:27', 'delivered'),
-(178, 13, 1090050, 200, '2023-07-24 08:59:37', 'delivered'),
-(179, 10, 40000, 200, '2023-07-24 09:13:26', 'delivered'),
-(180, 10, 190000, 200, '2023-07-24 11:17:44', 'delivered'),
-(181, 10, 125000, 200, '2023-07-24 11:21:13', 'delivered'),
-(182, 10, 200080, 200, '2023-07-24 11:41:42', 'delivered'),
-(183, 10, 35000, 200, '2023-07-24 11:56:15', 'delivered'),
-(184, 10, 78100, 200, '2023-07-24 12:19:35', 'delivered'),
-(185, 10, 1213200, 200, '2023-07-24 13:08:07', 'delivered'),
-(186, 10, 300, 200, '2023-07-24 13:18:47', 'delivered'),
-(187, 10, 35000, 200, '2023-07-24 15:12:44', 'delivered'),
-(188, 10, 12300, 200, '2023-07-24 15:41:40', 'delivered'),
-(189, 10, 500, 200, '2023-07-25 10:20:51', 'delivered'),
-(190, 10, 1000, 200, '2023-07-27 09:06:26', 'delivered'),
-(191, 10, 41000, 200, '2023-07-27 09:42:24', 'delivered'),
-(192, 10, 1300, 200, '2023-07-27 10:03:45', 'delivered'),
-(193, 12, 300040, 200, '2023-07-27 10:06:01', 'delivered'),
-(194, 10, 39900, 200, '2023-07-27 10:51:50', 'delivered'),
-(195, 10, 21500, 200, '2023-07-28 23:27:27', 'pending'),
-(196, 10, 33000, 200, '2023-07-28 23:29:16', 'pending'),
-(197, 10, 147000, 200, '2023-07-31 10:43:33', 'delivered'),
-(198, 10, 35000, 200, '2023-07-31 12:01:13', 'pending'),
-(199, 10, 35000, 200, '2023-07-31 12:34:24', 'pending'),
-(200, 10, 300040, 200, '2023-07-31 12:36:07', 'pending'),
-(201, 10, 221380, 200, '2023-07-31 14:49:17', 'pending');
+(214, 15, 76000, 200, '2023-08-30 03:30:11', 'delivered'),
+(215, 15, 75000, 200, '2023-08-30 03:31:32', 'pending'),
+(216, 15, 33000, 200, '2023-09-04 06:53:57', 'delivered'),
+(217, 15, 20000, 200, '2023-09-04 07:11:54', 'pending'),
+(218, 16, 33000, 200, '2023-09-04 10:32:12', 'pending'),
+(219, 15, 20000, 200, '2023-09-04 15:56:46', 'pending'),
+(220, 15, 100, 200, '2023-09-05 10:32:24', 'pending'),
+(221, 15, 35000, 200, '2023-09-05 10:32:53', 'pending'),
+(222, 15, 113000, 200, '2023-09-05 15:07:52', 'pending'),
+(223, 15, 21000, 200, '2023-09-06 11:56:51', 'pending'),
+(224, 15, 241080, 200, '2023-09-06 12:06:35', 'pending'),
+(225, 15, 1096512, 200, '2023-09-06 12:44:12', 'pending'),
+(226, 15, 35000, 200, '2023-09-06 12:45:39', 'pending'),
+(227, 15, 900120, 200, '2023-09-06 20:39:59', 'pending'),
+(228, 15, 728120, 200, '2023-09-06 20:40:49', 'pending'),
+(229, 15, 1275192, 200, '2023-09-06 20:42:51', 'pending');
 
 -- --------------------------------------------------------
 
@@ -143,78 +120,46 @@ CREATE TABLE `order_details` (
 --
 
 INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `price`, `qty`) VALUES
-(179, 163, 15, 100000, 1),
-(180, 164, 6, 20000, 1),
-(181, 165, 18, 1000050, 1),
-(182, 165, 6, 20000, 1),
-(183, 166, 11, 40000, 1),
-(184, 166, 12, 300040, 1),
-(185, 166, 13, 200080, 1),
-(186, 166, 16, 90000, 1),
-(187, 167, 16, 90000, 1),
-(188, 168, 8, 21000, 1),
-(189, 168, 7, 35000, 1),
-(190, 169, 14, 100040, 1),
-(191, 169, 7, 35000, 1),
-(192, 169, 9, 12000, 9),
-(193, 169, 6, 20000, 2900),
-(194, 170, 17, 1000040, 3),
-(195, 170, 18, 1000050, 1),
-(196, 171, 8, 21000, 1),
-(197, 171, 7, 35000, 1),
-(198, 171, 9, 12000, 1),
-(199, 172, 15, 100000, 1),
-(200, 173, 18, 1000050, 1),
-(201, 174, 15, 100000, 1),
-(202, 174, 17, 1000040, 1),
-(203, 175, 18, 1000050, 1),
-(204, 176, 16, 90000, 1),
-(205, 176, 13, 200080, 1),
-(206, 177, 18, 1000050, 1),
-(207, 178, 18, 1000050, 1),
-(208, 178, 16, 90000, 1),
-(209, 179, 11, 40000, 1),
-(210, 180, 15, 100000, 1),
-(211, 180, 16, 90000, 1),
-(212, 181, 7, 35000, 1),
-(213, 181, 16, 90000, 1),
-(214, 182, 13, 200080, 1),
-(215, 183, 7, 35000, 1),
-(216, 184, 26, 700, 1),
-(217, 184, 7, 35000, 1),
-(218, 184, 6, 20000, 2),
-(219, 184, 27, 300, 8),
-(220, 185, 27, 300, 12),
-(221, 185, 15, 100000, 12),
-(222, 185, 25, 800, 12),
-(223, 186, 19, 300, 1),
-(224, 187, 7, 35000, 1),
-(225, 188, 9, 12000, 1),
-(226, 188, 27, 300, 1),
-(227, 189, 23, 500, 1),
-(228, 190, 27, 300, 1),
-(229, 190, 26, 700, 1),
-(230, 191, 6, 20000, 1),
-(231, 191, 8, 21000, 1),
-(232, 192, 24, 600, 1),
-(233, 192, 26, 700, 1),
-(234, 193, 12, 300040, 1),
-(235, 194, 22, 4000, 1),
-(236, 194, 7, 35000, 1),
-(237, 194, 21, 900, 1),
-(238, 195, 23, 500, 1),
-(239, 195, 8, 21000, 1),
-(240, 196, 8, 21000, 1),
-(241, 196, 9, 12000, 1),
-(242, 197, 15, 100000, 1),
-(243, 197, 7, 35000, 1),
-(244, 197, 9, 12000, 1),
-(245, 198, 7, 35000, 1),
-(246, 199, 7, 35000, 1),
-(247, 200, 12, 300040, 1),
-(248, 201, 27, 300, 1),
-(249, 201, 13, 200080, 1),
-(250, 201, 8, 21000, 1);
+(267, 214, 6, 20000, 1),
+(268, 214, 7, 35000, 1),
+(269, 214, 8, 21000, 1),
+(270, 215, 7, 35000, 1),
+(271, 215, 11, 40000, 1),
+(272, 216, 8, 21000, 1),
+(273, 216, 9, 12000, 1),
+(274, 217, 6, 20000, 1),
+(275, 218, 8, 21000, 1),
+(276, 218, 9, 12000, 1),
+(277, 219, 6, 20000, 1),
+(278, 220, 20, 100, 1),
+(279, 221, 7, 35000, 1),
+(280, 222, 9, 12000, 1),
+(281, 222, 8, 21000, 1),
+(282, 222, 11, 40000, 1),
+(283, 222, 6, 20000, 1),
+(284, 222, 10, 20000, 1),
+(285, 223, 8, 21000, 1),
+(286, 224, 8, 21000, 1),
+(287, 224, 10, 20000, 1),
+(288, 224, 13, 200080, 1),
+(289, 225, 17, 1000012, 1),
+(290, 225, 22, 6500, 1),
+(291, 225, 16, 90000, 1),
+(292, 226, 7, 35000, 1),
+(293, 227, 12, 300040, 3),
+(294, 228, 11, 40000, 1),
+(295, 228, 9, 12000, 1),
+(296, 228, 8, 21000, 1),
+(297, 228, 7, 35000, 1),
+(298, 228, 6, 20000, 1),
+(299, 228, 12, 300040, 1),
+(300, 228, 13, 200080, 1),
+(301, 228, 10, 20000, 5),
+(302, 229, 20, 100, 1),
+(303, 229, 17, 1000012, 1),
+(304, 229, 11, 40000, 1),
+(305, 229, 7, 35000, 1),
+(306, 229, 13, 200080, 1);
 
 -- --------------------------------------------------------
 
@@ -237,7 +182,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `p_name`, `p_price`, `p_qty`, `p_tax`, `img_upload`, `category_id`) VALUES
-(6, 'realme c2', 20000, 1, 1, 'databaseimgs/OIP (3).jpeg', 6),
+(6, ' c2', 20000, 1, 1, 'databaseimgs/OIP (3).jpeg', 6),
 (7, 'realme c33', 35000, 1, 1, 'databaseimgs/OIP (9).jpeg', 6),
 (8, 'realme c21', 21000, 1, 1, 'databaseimgs/OIP (7).jpeg', 6),
 (9, 'realme c 12', 12000, 1, 1, 'databaseimgs/OIP (6).jpeg', 6),
@@ -252,8 +197,7 @@ INSERT INTO `products` (`id`, `p_name`, `p_price`, `p_qty`, `p_tax`, `img_upload
 (18, 'smasung a34', 1000040, 1, 1, 'databaseimgs/OIP (12).jpeg', 7),
 (19, 'realme data cable', 300, 1, 1, 'databaseimgs/OIP (17).jpeg', 9),
 (20, 'realme handsfree', 100, 1, 1, 'databaseimgs/OIP (18).jpeg', 9),
-(21, 'Samsung data cable type c', 900, 1, 1, 'databaseimgs/OIP (20).jpeg', 9),
-(22, 'realme air burd', 4000, 1, 1, 'databaseimgs/OIP (19).jpeg', 9),
+(22, 'realme air burd', 6500, 1, 1, 'databaseimgs/OIP (19).jpeg', 9),
 (23, 'Samsung adapter', 500, 1, 1, 'databaseimgs/OIP (22).jpeg', 9),
 (24, 'Samsung akg handfree', 600, 1, 1, 'databaseimgs/OIP (21).jpeg', 9),
 (25, 'apple data cable', 800, 1, 1, 'databaseimgs/OIP (23).jpeg', 9),
@@ -270,7 +214,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `full_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `phone` int(11) NOT NULL,
+  `phone` varchar(11) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` varchar(10) NOT NULL,
   `address` varchar(255) NOT NULL
@@ -281,10 +225,20 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `phone`, `password`, `role`, `address`) VALUES
-(10, 'Balach zehri', 'balachzehr7@gmail.com', 2147483647, '$2y$10$IxSSoRtNSMiNZSoklJ6O8.gjzc577xp8wTx8YIKzqz3QrWeiTfkgy', 'user', 'apsara apartment'),
-(11, 'muhammad hadi', 'muhammad123hadi@gmail.com', 2147483647, '$2y$10$bke8a8agAVfYximAbaFeReyA4ykE4osD4mi7Ikhl3dlMj5YhbjYri', 'user', 'gulshan-e-iqbal'),
-(12, 'hadi habib', 'hadi.habib315@gmail.com', 2147483647, '$2y$10$469V.mx.HVKLxoLYSLBzC.bXtm.Zvvzgue0JtuHpYZ43VcD8RgGD2', 'user', 'gulshan'),
-(13, 'codewithbz', 'codewithbz@gmail.com', 2147483647, '$2y$10$ypRCZSkpo4nNrQgWWxggZe4q6lqhE8IuzfrQDNWjfYgV.6/J0UISa', 'user', 'gulshan-e-iqbal');
+(15, 'balach', 'balachzehr@gmail.com', '2147483647', '$2y$10$vgpesEzlzONW8I9tnCVLGemsKKSi/iBg4vUlLdsEI8z3ifDpOi1lK', 'user', 'apsara appartment'),
+(16, 'hacker', 'hacker@gmail.com', '123', '$2y$10$v4SDAW5XY.ohRL9HV0xsO.PLDec1.txup.kmQTcw1XqbF7NJnHKC6', 'user', 'dhhdhdhd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `wishlist_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -332,6 +286,14 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indexes for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`wishlist_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -351,13 +313,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=202;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=230;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=307;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -369,7 +331,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
@@ -393,6 +361,13 @@ ALTER TABLE `order_details`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
+
+--
+-- Constraints for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
