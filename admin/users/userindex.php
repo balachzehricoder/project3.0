@@ -9,10 +9,9 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>users managment</title>
 </head>
-
+<a href="admin\index.php">back</a>
 <body>
 
-<?php include 'adminnav.php' ?>
 <br><br><br>
         <h2>List of users</h2>
         <br>
