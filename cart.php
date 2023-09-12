@@ -1,12 +1,6 @@
 <?php
+include 'navandside.php' ;
 
-
-session_start();
-// if not logged in cant see this page
-if (!isset($_SESSION["user_id"])) {
-  header("Location: login.php");
-  exit();
-}
 // include 'navs.php'
 include 'config.php';
 
@@ -148,7 +142,7 @@ ob_end_flush();
     </body>
     </html>
 	
-			<?php include 'navandside.php' ?>
+			
       <div class="span9">
 
       <table class="table table-bordered">
