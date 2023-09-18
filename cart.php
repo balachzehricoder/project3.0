@@ -1,6 +1,5 @@
 <?php
-include 'navandside.php' ;
-
+session_start(); 
 // include 'navs.php'
 include 'config.php';
 
@@ -88,6 +87,9 @@ if (isset($_POST['submit'])) {
   $conn->close();
 }
 ob_end_flush(); 
+
+include 'navandside.php' ;
+
 ?>
 <!-- end of mail and invoice work -->
 		<!DOCTYPE html>
@@ -105,7 +107,7 @@ ob_end_flush();
 	-->
 	<!--<link rel="stylesheet/less" type="text/css" href="themes/less/bootshop.less">
 	<script src="themes/js/less.js" type="text/javascript"></script> -->
-	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="themes/css/base.css" rel="stylesheet" media="screen"/>

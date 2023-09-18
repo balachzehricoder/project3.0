@@ -3,17 +3,22 @@ session_start();
 include 'config.php';
 
 // Check if the product ID is provided.
-if (!isset($_GET['id'])) {
-  echo 'Product ID not specified.';
-  exit;
+if (!isset($_SESSION['cart'])) {
+  $_SESSION['cart'] = array();
 }
 
 // Retrieve the product ID.
 $product_id = $_GET['id'];
 
 
-if (isset($_GET['quantity'])) {
-  $p_qty = $_GET['quantity'];
+
+if (isset($_POST['add_to_cart'])) {
+  $product_id = $_POST['product_id'];
+  $_SESSION['cart'][] = $product_id;
+
+    // Optionally, you can redirect the user back to the previous page or a cart page.
+    header('Location: previous-page.php');
+    exit;
 }
 
 // Check if the product exists in the database.
@@ -78,3 +83,5 @@ foreach ($_SESSION['cart'] as $prod_id => $prod) {
 // Redirect the user back to the main page.
 header('Location: category.php');
 ?>
+
+
