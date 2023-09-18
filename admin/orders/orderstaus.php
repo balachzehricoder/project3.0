@@ -1,4 +1,5 @@
 <?php
+
 // Step 1: Connect to the database
 include 'config.php';
 
@@ -32,6 +33,6 @@ $email = $row["email"];
 include 'Email/email.php';
 
 // Step 6: Redirect back to the list of records or show a confirmation message
-header("Location: order/orderindex.php");
+header("Location: ordersindex.php");
 exit();
 ?>

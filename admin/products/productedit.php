@@ -85,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 
     ?>
+<a class="btn btn-primary" href="/project3.0/admin/products/productsindex.php">back</a>
 
 
     <div class="container my-5">

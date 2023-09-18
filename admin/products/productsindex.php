@@ -9,14 +9,14 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>products managment</title>
 </head>
-<a href="index.php">back</a>
+<a class="btn btn-primary" href="/project3.0/admin/index.php">back</a>
 
 <body>
 
 
 <br><br><br>
         <h2>List of products</h2>
-        <a class="btn btn-primary" href="upload.php" role="button">add product</a>
+        <a class="btn btn-primary"  href="/project3.0/upload.php" role="button">add product</a>
         <br>
         <table class="table">
             <thead>
@@ -25,6 +25,7 @@
                     <th>product img</th>
                     <th>Product Name</th>
                     <th>product price</th>
+                    <th>catigroy no</th>
                     <th>Action</th>
                 </tr>
             <tbody>
@@ -47,19 +48,20 @@
                 }
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>
-    <td>$row[id]</td>
-    <td>$row[p_name]</td>
-    <td>$row[p_price]</td>
-    <td>$row[img_upload]</td>
-   
-    <td>
-        <a class='btn btn-danger btn-sm' href='productsdelete.php?id=$row[id]'>Delete</a>
-        <a class='btn btn-primary btn-sm' href='productedit.php?id=$row[id]'>edit</a>
+                        <td>$row[id]</td>
+                        <td><img src='$row[img_upload]' alt='$row[p_name]' class='img-thumbnail' width='100'></td>
+                        <td>$row[p_name]</td>
+                        <td>$row[p_price]</td>
+                        <td>$row[category_id]</td>
 
-    </td>
-</tr>";
+                       
+                        <td>
+                            <a class='btn btn-danger btn-sm' href='productsdelete.php?id=$row[id]'>Delete</a>
+                            <a class='btn btn-primary btn-sm' href='productedit.php?id=$row[id]'>Edit</a>
+                        </td>
+                    </tr>";
                 }
-                ?>
+?>                
 
 
               

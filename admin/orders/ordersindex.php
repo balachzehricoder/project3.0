@@ -9,7 +9,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>orders managment</title>
 </head>
-<a href="index.php">back</a>
+<a class="btn btn-primary" href="/project3.0/admin/index.php">back</a>
 
 <body>
 

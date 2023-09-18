@@ -9,7 +9,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>users managment</title>
 </head>
-<a href="admin\index.php">back</a>
+<a class="btn btn-primary" href="/project3.0/admin/index.php">back</a>
 <body>
 
 <br><br><br>
