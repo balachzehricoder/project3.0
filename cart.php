@@ -113,6 +113,15 @@ include 'navandside.php' ;
         height: 120px;
         animation: spin 2s linear infinite;
     }
+    @media (max-width: 768px) {
+      #preloader {
+            justify-content: center; /* Align to the right */
+        }
+        .spinner {
+            width: 60px;
+            height: 60px;
+        }
+    }
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
