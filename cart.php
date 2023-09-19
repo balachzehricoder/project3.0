@@ -179,63 +179,56 @@ include 'navandside.php' ;
     <div id="preloader">
     <div class="spinner"></div>
 </div>
-    </body>
-    </html>
-	
-			
-      <div class="span9">
-
-      <table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Description</th>
-      <th>Quantity/Update</th>
-      <th>Price</th>
-     
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($cart as $product_id => $product) { ?>
-<li class="col-2" >
-      <tr>
-        <td> <img width="60" src="<?php echo $product['image']; ?>" alt=""/></td>
-        <td><?php echo $product['name']; ?><br/>Color : black, Material : metal</td>
-        <td>
-          <div class="input-append">
-            <input class="span1" style="max-width:34px" placeholder="<?php echo $product['quantity'] ?>" id="appendedInputButtons" size="16" type="text">
-            <button class="btn" type="button"><i class="icon-minus"></i></button>
-            <button class="btn" type="button"><i class="icon-plus"></i></button>
-            <a href="remove.php?product_id=<?php echo $product_id; ?>" class="btn btn-danger" role="button">
-    <i class="icon-remove icon-white"></i> Remove
-</a>
-          </div>
-        </td>
-        <td>Rp<?php echo number_format($product['price']); ?></td>
-        
-      </tr>
-      </li>
-
-    <?php } ?>
-    <tr>
-      <td colspan="6" style="text-align:right">Total Price:</td>
-      <td> Rp<?php echo number_format( $_SESSION['cart_details']['cart_total_price']); ?></td>
-    </tr>
-    <tr>
-      <td colspan="6" style="text-align:right">Total Discount:</td>
-      <td> Rp00.00</td>
-    </tr>
-    <tr>
-      <td colspan="6" style="text-align:right">Total Tax:</td>
-      <td> Rp31.00</td>
-    </tr>
-    <tr>
-      <td colspan="6" style="text-align:right"><strong>TOTAL  =</strong></td>
-      <td class="label label-important" style="display:block"> <strong> (Rp<?php  echo number_format($_SESSION['cart_details']['cart_total_price'] ) ; ?>) </strong></td>
-    </tr>
-  </tbody>
-</table>
-        
+   
+<div class="span9">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Description</th>
+                    <th>Quantity/Update</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($cart as $product_id => $product) { ?>
+                    <tr>
+                        <td> <img width="60" src="<?php echo $product['image']; ?>" alt=""/></td>
+                        <td><?php echo $product['name']; ?><br/>Color : black, Material : metal</td>
+                        <td>
+                            <div class="input-append">
+                                <input class="span1" style="max-width:34px" placeholder="<?php echo $product['quantity'] ?>" id="appendedInputButtons" size="16" type="text">
+                                <button class="btn" type="button"><i class="icon-minus"></i></button>
+                                <button class="btn" type="button"><i class="icon-plus"></i></button>
+                                <a href="remove.php?product_id=<?php echo $product_id; ?>" class="btn btn-danger" role="button">
+                                    <i class="icon-remove icon-white"></i> Remove
+                                </a>
+                            </div>
+                        </td>
+                        <td>Rp<?php echo number_format($product['price']); ?></td>
+                    </tr>
+                <?php } ?>
+                <tr>
+                    <td colspan="6" style="text-align:right">Total Price:</td>
+                    <td> Rp<?php echo number_format( $_SESSION['cart_details']['cart_total_price']); ?></td>
+                </tr>
+                <tr>
+                    <td colspan="6" style="text-align:right">Total Discount:</td>
+                    <td> Rp00.00</td>
+                </tr>
+                <tr>
+                    <td colspan="6" style="text-align:right">Total Tax:</td>
+                    <td> Rp31.00</td>
+                </tr>
+                <tr>
+                    <td colspan="6" style="text-align:right"><strong>TOTAL  =</strong></td>
+                    <td class="label label-important" style="display:block"> <strong> (Rp<?php  echo number_format($_SESSION['cart_details']['cart_total_price'] ) ; ?>) </strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 <form id="checkoutForm" action="" method="POST">
   <!-- Add an ID to the button -->
   <button id="checkoutButton"type="submit"  class="btn btn-danger" name="submit">Checkout</button></form>
@@ -263,7 +256,7 @@ include 'navandside.php' ;
         $('#preloader').hide();
     }, 1000); // Replace 2000 with the appropriate delay (in milliseconds)
 </script>
-
+  </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
