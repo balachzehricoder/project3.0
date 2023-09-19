@@ -1,3 +1,4 @@
+
 <?php
 session_start(); 
 // include 'navs.php'
@@ -91,6 +92,32 @@ ob_end_flush();
 include 'navandside.php' ;
 
 ?>
+<style>
+    #preloader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: rgba(0,0,0,0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .spinner {
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid #3498db;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
 <!-- end of mail and invoice work -->
 		<!DOCTYPE html>
     <html lang="en">
@@ -140,7 +167,9 @@ include 'navandside.php' ;
       }
     </style>
     <body>
-      
+    <div id="preloader">
+    <div class="spinner"></div>
+</div>
     </body>
     </html>
 	
@@ -208,9 +237,9 @@ include 'navandside.php' ;
                     
 
       
-      
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>   $(document).ready(function() {
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>   
+    $(document).ready(function() {
         // Add event listener to the Checkout button
         $('#checkoutForm').on('submit', function() {
             // Show the preloader
@@ -223,7 +252,7 @@ include 'navandside.php' ;
     // For demonstration purposes, this is a simulated delay
     setTimeout(function() {
         $('#preloader').hide();
-    }, 2000); // Replace 2000 with the appropriate delay (in milliseconds)
+    }, 1000); // Replace 2000 with the appropriate delay (in milliseconds)
 </script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

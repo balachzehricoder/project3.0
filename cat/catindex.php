@@ -46,18 +46,59 @@
     }
     ?>
 
-    <h2>Add Category</h2>
-    <form method="post" action="" enctype="multipart/form-data">
-        <label for="name">Category Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br>
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" rows="4" cols="50" required></textarea>
-        <br>
-        <label for="name">Category picture:</label>
-        <input type="file" id="name" name="picture" required>
-        <br>
-        <input type="submit" value="Add Category">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Category</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Add Category</h2>
+        <form method="post" action="" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Category Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="picture">Category picture:</label>
+                <input type="file" id="picture" name="picture" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Category" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
     </form>
 </body>
 </html>
