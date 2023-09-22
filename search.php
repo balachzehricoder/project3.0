@@ -10,7 +10,7 @@ include 'config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>search query</title>
 </head>
 <body>
     	
@@ -72,7 +72,7 @@ include 'config.php';
                                             <a href="full_page.php?id=<?php echo $product ['id']; ?>"><img class="img"  src="<?php echo $product["img_upload"]; ?>" alt=""/></a>
                                             <div class="caption">
                                                 <h5><?php echo $product["p_name"]; ?></h5>
-                                                <h5>Rs <?php echo $product["p_price"]; ?></h5>
+                                                <h5>Rs <?php echo number_format( $product["p_price"]); ?></h5>
                                                 <h4 style="text-align:center">
                                                     <a class="btn" href="wishlist.php?id=<?php echo['id']; ?>"> <i class="icon-heart"></i></a>
                                                     <a class="btn" href="add-to-cart.php?id=<?php echo$product ['id']; ?>">Add to <i class="icon-shopping-cart"></i></a>

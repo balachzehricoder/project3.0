@@ -133,7 +133,7 @@ include 'navandside.php' ;
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+      <title>Cart</title>
       <meta name="author" content="">
 <!--Less styles -->
    <!-- Other Less css file //different less files has different color scheam

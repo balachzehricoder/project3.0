@@ -1,13 +1,11 @@
 <?php
-include 'adminnav.php';
 include 'config.php';
-
 $id = "";
 $ADMIN_NAME = "";
 $ADMIN_EMAILID = "";
 $ADMIN_PASSWORD = "";
 
-$erroMessage = "";
+$errorMessage = "";
 $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -39,13 +37,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $ADMIN_PASSWORD = $_POST["ADMIN_PASSWORD"];
 
     if (empty($ADMIN_NAME) || empty($ADMIN_EMAILID) || empty($ADMIN_PASSWORD)) {
-        $erroMessage = "ALL the fields are required";
+        $errorMessage = "ALL the fields are required";
     } else {
         $sql = "UPDATE admin SET ADMIN_NAME = '$ADMIN_NAME', ADMIN_EMAILID = '$ADMIN_EMAILID', ADMIN_PASSWORD = '$ADMIN_PASSWORD' WHERE ADMINid = $id";
 
         $result = $conn->query($sql);
         if (!$result) {
-            $erroMessage = "Invalid query: " . $conn->error;
+            $errorMessage = "Invalid query: " . $conn->error;
         } else {
             $successMessage = "Admin updated correctly";
             header("location: adminindex.php");
@@ -64,11 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 <body>
     <?php
-
-
-    if (!empty($erroMessage)) {
+    if (!empty($errorMessage)) {
         echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                <strong>$erroMessage</strong>
+                <strong>$errorMessage</strong>
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close'></button>
               </div>";
     }
@@ -84,24 +80,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <div class="container my-5">
         <form method="post">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
+
             <div class="row md-3">
                 <label class="col-sm-3 col-form-label">Name</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="ADMIN_NAME" value="<?php echo $ADMIN_NAME; ?>">
                 </div>
             </div>
+
             <div class="row md-3">
                 <label class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="ADMIN_EMAILID" value="<?php echo $ADMIN_EMAILID; ?>">
                 </div>
             </div>
+
             <div class="row md-3">
                 <label class="col-sm-3 col-form-label">Password</label>
                 <div class="col-sm-6">
                     <input type="password" class="form-control" name="ADMIN_PASSWORD" value="<?php echo $ADMIN_PASSWORD; ?>">
                 </div>
             </div>
+
             <div class="row md-3">
                 <div class="offset-sm-3 col-sm-3 d-grid">
                     <button type="submit" class="btn btn-primary">Submit</button>

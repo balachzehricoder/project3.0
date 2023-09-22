@@ -69,12 +69,15 @@ if (isset($_GET['id'])) {
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
 	<style type="text/css" id="enject"></style>
+    <link rel="icon" href="logo.png">
+
   <head>
     <meta charset="utf-8">
-    <title>Bootshop online Shopping cart</title>
+    <title><?php echo $category['name'] ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+
 <!--Less styles -->
    <!-- Other Less css file //different less files has different color scheam
 	<link rel="stylesheet/less" type="text/css" href="themes/less/simplex.less">
