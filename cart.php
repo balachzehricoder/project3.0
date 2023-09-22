@@ -222,7 +222,7 @@ include 'navandside.php' ;
                     <td> Rp31.00</td>
                 </tr>
                 <tr>
-                    <td colspan="6" style="text-align:right"><strong>TOTAL  =</strong></td>
+                    <td colspan="6" style="text-align:center"><strong>TOTAL  =</strong></td>
                     <td class="label label-important" style="display:block"> <strong> (Rp<?php  echo number_format($_SESSION['cart_details']['cart_total_price'] ) ; ?>) </strong></td>
                 </tr>
             </tbody>

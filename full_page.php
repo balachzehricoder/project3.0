@@ -73,7 +73,16 @@ include 'navandside.php';
 <?php 
 
 
-$id = $_GET['id'];
+if (isset($_GET['id'])) {
+    // The 'id' key exists in the $_GET array
+    $id = $_GET['id'];
+
+    // You can safely use $id here
+} else {
+    // The 'id' key does not exist in the $_GET array
+    // Handle this situation, such as providing a default value or displaying an error message
+    echo "The 'id' key is not present in the URL.";
+}
 
 
 $query = "SELECT * FROM products where id='$id' ";
@@ -133,14 +142,18 @@ if($result->num_rows > 0){
 				<hr class="soft"/>
 				<form class="form-horizontal qtyFrm">
 					
-				  <div class="control-group">
+				  <div class="control-group" action="addToCart.php" method="GET">
 					<label class="control-label"><span>Pkr           <?php echo $p_price ?></span></label>
 					<div class="controls">
-					<input type="number" class="span1" placeholder="Qty."/>
-					  <button type="submit" class="btn btn-large btn-primary pull-right"> Add to cart <i class=" icon-shopping-cart"></i></button>
-					</div>
-				  </div>
-				</form>
+					<a href="add-to-cart.php?id=<?php  $id; ?>">
+					</a>
+					
+				</div>
+			</div>
+		</form>
+		<a href="add-to-cart.php?id=<?php echo $id; ?>">
+<button type="button" class="btn btn-large btn-primary pull-right"> Add to cart <i class="icon-shopping-cart"></i></button>
+</a>
 				
 				<hr class="soft"/>
 				<h4>100 items in stock</h4>

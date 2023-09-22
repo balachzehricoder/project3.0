@@ -1,4 +1,9 @@
-<?php  include 'config.php';   include 'funcation.php'; session_start();
+<?php  
+include 'config.php';   
+include 'funcation.php'; 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 
 //funcation of wishlist count
