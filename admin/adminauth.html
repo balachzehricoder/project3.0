@@ -68,20 +68,7 @@
     </div>
 
     <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            // Retrieve username and password values
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-
-            // Validate admin credentials
-            if (username === "phpadmin" && password === "adminphp") {
-                // Redirect to the desired page
-                window.location.href = "adminindex.php";
-            } else {
-                // Display error message
-                document.getElementById("errorMessage").textContent = "Invalid username or password";
+document.getElementById("loginForm").addEventListener("submit", function(event) { event.preventDefault();var username = document.getElementById("username").value;var password = document.getElementById("password").value;if (username === "phpadmin" && password === "adminphp") {window.location.href = "adminindex.php"; } else {document.getElementById("errorMessage").textContent = "Invalid username or password";
             }
         });
     </script>

@@ -154,7 +154,7 @@ echo $wishlistCount ;
 	<div class="container">
 	<div class="row">
 <!-- Sidebar ================================================== -->
-	<div id="sidebar" class="span3">
+	<div style="height: 100vh;" id="sidebar" class="span3">
 		<div class="well well-small"><a id="myCart" href="cart.php"><img src="themes/images/ico-cart.png" alt="cart"><?php
 					//   $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 					//   echo $cart_count;

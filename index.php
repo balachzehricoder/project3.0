@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>phonesell.com</title>
+    <title>phonesell</title>
 
     <!-- Include Bootstrap and other stylesheets -->
     <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen" />
@@ -19,12 +19,12 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="themes/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
-    <link rel="icon" href="logo.png">
 
     <style>
         .img {
             height: 100px;
         }
+        
     </style>
 </head>
 <body>
@@ -38,7 +38,7 @@
         <div class="col-md-9">
             <div class="well well-small">
                 <h4>Our Products</h4>
-                <ul class="thumbnails product">
+                <ul class="thumbnails ">
                     <?php
                     $query = "SELECT * FROM products";
                     $result = $conn->query($query);
@@ -53,7 +53,7 @@
                             // Escape output for security
                             $escaped_p_name = htmlspecialchars($p_name, ENT_QUOTES, 'UTF-8');
                             ?>
-                            <li class="col-md-3 col-sm-6 col-xm-6 col-lg-3 ">
+                            <li class="col-md-3 col-sm-6 col-xm-6 col-lg-3 span2 ">
                                 <div class="thumbnail product">
                                     <a href="full_page.php?id=<?php echo $product_id; ?>"><img class="img" src="<?php echo $img_upload; ?>" alt="" /></a>
                                     <div class="caption">
